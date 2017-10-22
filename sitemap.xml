@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://caoyu.info/blog/404.html</loc>
+    
+    <lastmod>2017-10-22T07:01:10.335Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://caoyu.info/blog/spring-injection-failed.html</loc>
     
     <lastmod>2017-10-19T11:48:56.205Z</lastmod>
