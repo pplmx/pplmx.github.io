@@ -1,3 +1,4 @@
+https://caoyu.info/blog/message-board.html
 https://caoyu.info/blog/spring-injection-failed.html
 https://caoyu.info/blog/autowired-and-resource.html
 https://caoyu.info/blog/build-server-zsh.html
