@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://caoyu.info/blog/blog/springboot-mail.html</loc>
+    <lastmod>2017-11-13T06:52:08.096Z</lastmod>
+    <data>
+        <display>
+        <title>springboot整合Mail服务</title>
+        <pubTime>2017-11-13T06:18:09.000Z</pubTime>
+        
+        <tag>IDEA</tag>
+         
+        <tag>Spring</tag>
+         
+        <tag>Springboot</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="https://caoyu.info/blog/blog/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://caoyu.info/blog/blog/message-board.html</loc>
     <lastmod>2017-10-26T12:54:42.834Z</lastmod>
     <data>

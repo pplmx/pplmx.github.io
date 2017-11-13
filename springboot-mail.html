@@ -6,14 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://caoyu.info/blog">
-  <title>Tag: java | 我还是个宝宝!</title>
+  <title>springboot整合Mail服务 | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我还是个宝宝!">
-<meta property="og:url" content="https://caoyu.info/blog/tags/java/index.html">
+  <meta name="description" content="1 导入mail包1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;gt; 2 application.yml配置123456">
+<meta name="keywords" content="IDEA,Spring,Springboot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot整合Mail服务">
+<meta property="og:url" content="https://caoyu.info/blog/springboot-mail.html">
 <meta property="og:site_name" content="我还是个宝宝!">
+<meta property="og:description" content="1 导入mail包1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;gt; 2 application.yml配置123456">
+<meta property="og:image" content="https://i.loli.net/2017/11/13/5a093b5554480.jpg">
+<meta property="og:image" content="https://i.loli.net/2017/11/13/5a093d7c436f4.png">
+<meta property="og:image" content="https://i.loli.net/2017/11/13/5a093d7c48466.png">
+<meta property="og:updated_time" content="2017-11-13T06:52:08.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我还是个宝宝!">
+<meta name="twitter:title" content="springboot整合Mail服务">
+<meta name="twitter:description" content="1 导入mail包1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;gt; 2 application.yml配置123456">
+<meta name="twitter:image" content="https://i.loli.net/2017/11/13/5a093b5554480.jpg">
   
     <link rel="alternative" href="/atom.xml" title="我还是个宝宝!" type="application/atom+xml">
   
@@ -180,75 +189,247 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-springboot-mail" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/build-server-java.html" class="archive-article-date">
-  	<time datetime="2017-10-13T01:48:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/build-server-java.html">linux服务器初建之java环境</a>
+    <h1 class="article-title" itemprop="name">
+      springboot整合Mail服务
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <!-- 显示阅读量 -->
+			
+			<br/>
+			<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+			<span class="icon-sort"></span>
+			<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+			          阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+			</span>
+			</a>
+			
+		<!-- 显示阅读量 -->
+        
+        <a href="/blog/springboot-mail.html" class="archive-article-date">
+  	<time datetime="2017-11-13T06:18:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-导入mail包"><a href="#1-导入mail包" class="headerlink" title="1 导入mail包"></a>1 导入mail包</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="2-application-yml配置"><a href="#2-application-yml配置" class="headerlink" title="2 application.yml配置"></a>2 application.yml配置</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="attr">spring:</span></div><div class="line"><span class="attr">    mail:</span></div><div class="line"><span class="attr">        protocol:</span> <span class="string">smtp</span> <span class="comment">#smtp是邮件发送协议，pop3和imap是邮件接收协议。因为我们要发送邮件，因此是smtp</span></div><div class="line"><span class="attr">        host:</span> <span class="string">smtp.qq.com</span> <span class="comment">#邮件发送服务器的主机,这里采用qq邮箱服务器</span></div><div class="line"><span class="attr">        port:</span> <span class="number">587</span> <span class="comment">#这个端口是必须设置的,看到好多教程,都没有设置它</span></div><div class="line"><span class="attr">        username:</span> <span class="comment">#qq邮箱,</span></div><div class="line"><span class="attr">        password:</span> <span class="comment">#qq授权码</span></div><div class="line"><span class="attr">        properties:</span></div><div class="line"><span class="attr">            mail:</span></div><div class="line"><span class="attr">                smtp:</span></div><div class="line"><span class="attr">                    auth:</span> <span class="literal">true</span></div><div class="line"><span class="attr">                    starttls:</span></div><div class="line"><span class="attr">                        enable:</span> <span class="literal">true</span></div><div class="line"><span class="attr">                        required:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
+<a id="more"></a> 
+<p>端口配置信息,仅供参考<br><img src="https://i.loli.net/2017/11/13/5a093b5554480.jpg" alt="2017042614212226.jpg"></p>
+<h1 id="3-Tests"><a href="#3-Tests" class="headerlink" title="3 Tests"></a>3 Tests</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> org.junit.Test;</div><div class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</div><div class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</div><div class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</div><div class="line"><span class="keyword">import</span> org.springframework.mail.SimpleMailMessage;</div><div class="line"><span class="keyword">import</span> org.springframework.mail.javamail.JavaMailSender;</div><div class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.annotation.Resource;</div><div class="line"></div><div class="line"><span class="meta">@RunWith</span>(SpringRunner.class)</div><div class="line"><span class="meta">@SpringBootTest</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BlogApplicationTests</span> </span>&#123;</div><div class="line">    <span class="meta">@Resource</span></div><div class="line">    <span class="keyword">private</span> JavaMailSender javaMailSender;</div><div class="line"></div><div class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;spring.mail.username&#125;"</span>)</div><div class="line">    <span class="keyword">private</span> String sender;</div><div class="line"></div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</div><div class="line">        SimpleMailMessage message = <span class="keyword">new</span> SimpleMailMessage();</div><div class="line">        message.setFrom(sender);<span class="comment">//发送者.</span></div><div class="line">        message.setTo(<span class="string">"xxx@qq.com"</span>);<span class="comment">//接收者.</span></div><div class="line">        message.setSubject(<span class="string">"测试邮件（邮件主题）"</span>);<span class="comment">//邮件主题.</span></div><div class="line">        message.setText(<span class="string">"这是邮件内容"</span>);<span class="comment">//邮件内容.</span></div><div class="line">        javaMailSender.send(message);<span class="comment">//发送邮件</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="4-关于QQ授权码"><a href="#4-关于QQ授权码" class="headerlink" title="4 关于QQ授权码"></a>4 关于QQ授权码</h1><p><img src="https://i.loli.net/2017/11/13/5a093d7c436f4.png" alt="1.png"><br><img src="https://i.loli.net/2017/11/13/5a093d7c48466.png" alt="2.png"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/blog/img/AliPay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/blog/img/WeChatPay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Springboot</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/blog/categories/linux//" class="article-tag-list-link color1">linux</a>
+        			<a href="/blog/categories/java//" class="article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!--<a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>-->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<!--<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://caoyu.info/blog/springboot-mail.html" alt="微信分享二维码">
+    </div>
+</div>-->
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/blog/spring-injection-failed.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">spring注入null</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-导入mail包"><span class="toc-number">1.</span> <span class="toc-text">1 导入mail包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-application-yml配置"><span class="toc-number">2.</span> <span class="toc-text">2 application.yml配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Tests"><span class="toc-number">3.</span> <span class="toc-text">3 Tests</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-关于QQ授权码"><span class="toc-number">4.</span> <span class="toc-text">4 关于QQ授权码</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
+  
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" style="width: 96%;margin: 0 auto;" data-id="city" data-uid="MTAyMC8zMTUxNC84MDc4">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+  
 
 
           </div>
@@ -281,9 +462,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
