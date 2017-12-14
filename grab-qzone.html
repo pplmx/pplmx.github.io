@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://caoyu.info/blog">
-  <title>Tag: zsh | 我还是个宝宝!</title>
+  <title>抓取好友说说,进行简单的分析 | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我还是个宝宝!">
-<meta property="og:url" content="https://caoyu.info/blog/tags/zsh/index.html">
+  <meta name="description" content="1 Something needed before action需要下载chromedriver.exe 需要用到selenium,jieba,wordcloud,BeautifulSoup,xlrd,xlwt,xlutils等模块 都可以使用pip install 模块名 方式安装,如果安装失败,可以自己下载whl文件,并将whl文件 放在python的安装目录Scripts下,再通过pip i">
+<meta name="keywords" content="data mining,data analysis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="抓取好友说说,进行简单的分析">
+<meta property="og:url" content="https://caoyu.info/blog/grab-qzone.html">
 <meta property="og:site_name" content="我还是个宝宝!">
+<meta property="og:description" content="1 Something needed before action需要下载chromedriver.exe 需要用到selenium,jieba,wordcloud,BeautifulSoup,xlrd,xlwt,xlutils等模块 都可以使用pip install 模块名 方式安装,如果安装失败,可以自己下载whl文件,并将whl文件 放在python的安装目录Scripts下,再通过pip i">
+<meta property="og:updated_time" content="2017-12-14T02:42:14.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我还是个宝宝!">
+<meta name="twitter:title" content="抓取好友说说,进行简单的分析">
+<meta name="twitter:description" content="1 Something needed before action需要下载chromedriver.exe 需要用到selenium,jieba,wordcloud,BeautifulSoup,xlrd,xlwt,xlutils等模块 都可以使用pip install 模块名 方式安装,如果安装失败,可以自己下载whl文件,并将whl文件 放在python的安装目录Scripts下,再通过pip i">
   
     <link rel="alternative" href="/atom.xml" title="我还是个宝宝!" type="application/atom+xml">
   
@@ -180,71 +185,263 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-grab-qzone" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/build-server-zsh.html" class="archive-article-date">
-  	<time datetime="2017-10-13T03:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/build-server-zsh.html">linux服务器初建之zsh安装</a>
+    <h1 class="article-title" itemprop="name">
+      抓取好友说说,进行简单的分析
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <!-- 显示阅读量 -->
+			
+			<br/>
+			<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+			<span class="icon-sort"></span>
+			<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+			          阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+			</span>
+			</a>
+			
+		<!-- 显示阅读量 -->
+        
+        <a href="/blog/grab-qzone.html" class="archive-article-date">
+  	<time datetime="2017-12-14T01:25:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Something-needed-before-action"><a href="#1-Something-needed-before-action" class="headerlink" title="1 Something needed before action"></a>1 Something needed before action</h1><pre><code>需要下载chromedriver.exe
+需要用到selenium,jieba,wordcloud,BeautifulSoup,xlrd,xlwt,xlutils等模块
+都可以使用pip install 模块名 方式安装,如果安装失败,可以自己下载whl文件,并将whl文件
+放在python的安装目录Scripts下,再通过pip install 本地地址.whl,安装所需模块
+</code></pre><a id="more"></a>
+<h1 id="2-In-action"><a href="#2-In-action" class="headerlink" title="2 In action"></a>2 In action</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="comment"># Created by PyCharm</span></div><div class="line"><span class="comment"># @author  : mystic</span></div><div class="line"><span class="comment"># @date    : 2017/12/12 8:33</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">    抓取QQ空间说说</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="keyword">import</span> csv</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</div><div class="line"></div><div class="line"><span class="keyword">import</span> jieba</div><div class="line"><span class="keyword">import</span> xlrd <span class="keyword">as</span> xlrd</div><div class="line"><span class="keyword">import</span> xlwt <span class="keyword">as</span> xlwt</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> array</div><div class="line"><span class="keyword">from</span> scipy.misc <span class="keyword">import</span> imread</div><div class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</div><div class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud, ImageColorGenerator, STOPWORDS</div><div class="line"><span class="keyword">from</span> xlutils.copy <span class="keyword">import</span> copy</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_existed</span><span class="params">(path)</span>:</span></div><div class="line">    <span class="keyword">if</span> os.path.exists(path):</div><div class="line">        os.remove(path)</div><div class="line">    w = xlwt.Workbook()</div><div class="line">    w.add_sheet(<span class="string">'Sheet1'</span>)</div><div class="line">    w.save(path)</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">write_data</span><span class="params">(data1, data2, path)</span>:</span></div><div class="line">    f = xlrd.open_workbook(path)</div><div class="line">    sheet = f.sheet_by_name(<span class="string">'Sheet1'</span>)</div><div class="line">    src = copy(f)</div><div class="line">    row = sheet.nrows</div><div class="line">    src.get_sheet(<span class="number">0</span>).write(row, <span class="number">0</span>, data1)</div><div class="line">    src.get_sheet(<span class="number">0</span>).write(row, <span class="number">1</span>, data2)</div><div class="line">    src.save(path)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 登录QQ空间</span></div><div class="line"><span class="comment"># noinspection PyBroadException</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_shuoshuo</span><span class="params">(my_qq, my_pwd, friend_qq, path)</span>:</span></div><div class="line">    is_existed(path)</div><div class="line">    <span class="comment"># 使用selenium</span></div><div class="line">    driver = webdriver.Chrome()</div><div class="line">    driver.maximize_window()</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        driver.set_page_load_timeout(<span class="number">10</span>)</div><div class="line">        driver.get(<span class="string">'https://user.qzone.qq.com/&#123;&#125;/311'</span>.format(friend_qq))</div><div class="line">        time.sleep(<span class="number">3</span>)</div><div class="line">    <span class="keyword">except</span> Exception:</div><div class="line">        print(<span class="string">u'网页启动异常,请重新打开'</span>)</div><div class="line">        time.sleep(<span class="number">2</span>)</div><div class="line">        driver.quit()</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        driver.find_element_by_id(<span class="string">'login_div'</span>)</div><div class="line">    <span class="keyword">except</span> Exception:</div><div class="line">        print(<span class="string">u'非好友无法进入空间,无权限抓取内容'</span>)</div><div class="line">        driver.quit()</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        driver.switch_to.frame(<span class="string">'login_frame'</span>)</div><div class="line">        driver.find_element_by_id(<span class="string">'switcher_plogin'</span>).click()</div><div class="line">        driver.find_element_by_id(<span class="string">'u'</span>).clear()</div><div class="line">        <span class="comment"># 输入个人QQ</span></div><div class="line">        driver.find_element_by_id(<span class="string">'u'</span>).send_keys(my_qq)</div><div class="line">        driver.find_element_by_id(<span class="string">'p'</span>).clear()</div><div class="line">        <span class="comment"># 输入个人密码</span></div><div class="line">        driver.find_element_by_id(<span class="string">'p'</span>).send_keys(my_pwd)</div><div class="line">        driver.find_element_by_id(<span class="string">'login_button'</span>).click()</div><div class="line">        time.sleep(<span class="number">3</span>)</div><div class="line">    driver.implicitly_wait(<span class="number">3</span>)</div><div class="line">    <span class="comment"># 判断好友是否设置了权限</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        driver.find_element_by_id(<span class="string">'QM_OwnerInfo_Icon'</span>)</div><div class="line">    <span class="keyword">except</span> Exception:</div><div class="line">        print(<span class="string">u'空间加载异常,请重新打开'</span>)</div><div class="line">        time.sleep(<span class="number">2</span>)</div><div class="line">        driver.quit()</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        driver.switch_to.frame(<span class="string">'app_canvas_frame'</span>)</div><div class="line">        next_page = <span class="string">'page'</span></div><div class="line">        page = <span class="number">1</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            <span class="keyword">while</span> next_page:</div><div class="line">                pages = driver.page_source</div><div class="line">                soup = BeautifulSoup(pages, <span class="string">'lxml'</span>)</div><div class="line">                shuoshuo_send_times = soup.select(</div><div class="line">                    <span class="string">'ol#msgList li.feed div.box.bgr3 &gt; div.ft div.info a.c_tx.c_tx3.goDetail'</span>)</div><div class="line">                shuoshuos = soup.select(<span class="string">'ol#msgList li.feed div.bd pre.content'</span>)</div><div class="line">                print(<span class="string">u'正在抓取第%d页的内容&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;'</span> % page)</div><div class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> range(len(shuoshuos)):</div><div class="line">                    data = &#123;</div><div class="line">                        <span class="string">'time'</span>: shuoshuo_send_times[i][<span class="string">'title'</span>],</div><div class="line">                        <span class="string">'shuos'</span>: shuoshuos[i].text</div><div class="line">                    &#125;</div><div class="line">                    write_data(data[<span class="string">'time'</span>], data[<span class="string">'shuos'</span>], path)</div><div class="line">                next_page = driver.find_element_by_link_text(<span class="string">u'下一页'</span>)</div><div class="line">                page = page + <span class="number">1</span></div><div class="line">                next_page.click()</div><div class="line">                time.sleep(<span class="number">3</span>)</div><div class="line">                driver.implicitly_wait(<span class="number">3</span>)</div><div class="line">            driver.quit()</div><div class="line">        <span class="keyword">except</span> Exception:</div><div class="line">            print(<span class="string">u'抓取到%d页面结束'</span> % page)</div><div class="line">            driver.quit()</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">shuoshuo_analysis</span><span class="params">(file_path)</span>:</span></div><div class="line">    <span class="comment"># 读取csv文件</span></div><div class="line">    <span class="comment"># csv模块读取csv文件</span></div><div class="line">    <span class="keyword">with</span> open(file_path, <span class="string">'rt'</span>, encoding=<span class="string">'UTF-8'</span>) <span class="keyword">as</span> file:</div><div class="line">        read_csv = csv.reader(file)</div><div class="line">        all_moods = [mood <span class="keyword">for</span> mood <span class="keyword">in</span> read_csv]</div><div class="line">        all_moods = array(all_moods)</div><div class="line">        shuoshuos = all_moods[:, <span class="number">1</span>]</div><div class="line">        phrases = []</div><div class="line">        <span class="comment"># 分割(以特殊字符,如逗号,感叹号等,进行分割)+合拼成一维列表(将所有说说文字内容合并)</span></div><div class="line">        <span class="keyword">for</span> shuoshuo <span class="keyword">in</span> shuoshuos:</div><div class="line">            phrases += re.split(<span class="string">r'[^\u4E00-\u9FA5\w]+'</span>, shuoshuo)</div><div class="line">        <span class="comment"># 去除空串</span></div><div class="line">        phrases = list(filter(<span class="keyword">lambda</span> phrase: phrase != <span class="string">''</span>, phrases))</div><div class="line">        words = []</div><div class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> phrases:</div><div class="line">            words += jieba.cut(p, HMM=<span class="keyword">True</span>)</div><div class="line">        print(words)</div><div class="line">        print(len(words))</div><div class="line">        print(set(words))</div><div class="line">        print(len(set(words)))</div><div class="line">        <span class="comment"># 去除长度为1的词</span></div><div class="line">        <span class="comment"># words = list(filter(lambda word: len(word) &gt; 1, words))</span></div><div class="line">        print(Counter(words))</div><div class="line">        back_color = imread(<span class="string">'pokemon.jpg'</span>)  <span class="comment"># 解析该图片</span></div><div class="line">        wc = WordCloud(background_color=<span class="string">'white'</span>,  <span class="comment"># 背景颜色</span></div><div class="line">                       max_words=<span class="number">1000</span>,  <span class="comment"># 最大词数</span></div><div class="line">                       mask=back_color,  <span class="comment"># 以该参数值作图绘制词云，这个参数不为空时，width和height会被忽略</span></div><div class="line">                       max_font_size=<span class="number">100</span>,  <span class="comment"># 显示字体的最大值</span></div><div class="line">                       stopwords=STOPWORDS.add(<span class="string">'苟利国'</span>),  <span class="comment"># 使用内置的屏蔽词，再添加'苟利国'</span></div><div class="line">                       font_path=<span class="string">"C:/Windows/Fonts/STFANGSO.ttf"</span>,  <span class="comment"># 解决显示口字型乱码问题，可进入C:/Windows/Fonts/目录更换字体</span></div><div class="line">                       random_state=<span class="number">42</span>,  <span class="comment"># 为每个词返回一个PIL颜色</span></div><div class="line">                       <span class="comment"># width=1000,  # 图片的宽</span></div><div class="line">                       <span class="comment"># height=860  #图片的长</span></div><div class="line">                       )</div><div class="line">        wc.generate(<span class="string">' '</span>.join(words))</div><div class="line">        <span class="comment"># 基于彩色图像生成相应彩色</span></div><div class="line">        image_colors = ImageColorGenerator(back_color)</div><div class="line">        <span class="comment"># 显示图片</span></div><div class="line">        plt.imshow(wc)</div><div class="line">        <span class="comment"># 关闭坐标轴</span></div><div class="line">        plt.axis(<span class="string">'off'</span>)</div><div class="line">        <span class="comment"># 绘制词云</span></div><div class="line">        plt.figure()</div><div class="line">        plt.imshow(wc.recolor(color_func=image_colors))</div><div class="line">        plt.axis(<span class="string">'off'</span>)</div><div class="line">        <span class="comment"># 保存图片</span></div><div class="line">        wc.to_file(<span class="string">'wordcloud.png'</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="comment"># 爬取QQ空间好友动态,并保存到本地</span></div><div class="line">    <span class="comment"># myself = input('Please input your QQ: ')</span></div><div class="line">    <span class="comment"># upwd = input('Please input your password: ')</span></div><div class="line">    <span class="comment"># friend = input('Please input your friend QQ: ')</span></div><div class="line">    <span class="comment"># save_path = 'd:/' + friend + '.csv'</span></div><div class="line">    <span class="comment"># get_shuoshuo(myself, upwd, friend, save_path)</span></div><div class="line">    <span class="comment"># 进行说说分析,并生成词云</span></div><div class="line">    shuoshuo_analysis(<span class="string">'d:/me.csv'</span>)</div></pre></td></tr></table></figure>
+<h1 id="3-Something-worth-noting"><a href="#3-Something-worth-noting" class="headerlink" title="3 Something worth noting"></a>3 Something worth noting</h1><pre><code>1.python版本: 3.6.3
+2.生成的csv文件,在shuoshuo_analysis()中直接调用,会报错,至少我这边是这样的
+  解决方案: 
+    对打开生成的csv文件,对其另存为普通的csv文件[不是那个utf8格式的csv]
+    然后用记事本打开,复制里面的内容;再用sublime打开(应该是乱码的),
+    将复制的内容覆盖原有的乱码内容,同时save as utf-8
+    shuoshuo_analysis()调用这个文件
+  为什么不在最初就保存为utf-8格式的csv文件呢?
+    直接保存为csv utf-8格式,打开不会乱码,但是在读取时,第一行数据有问题,其他正常
+3.制作词云图片时,选择的背景图片,最好是对比度比较明显的 
+</code></pre><p><a href="https://github.com/mystic-cg/data_mining.git" target="_blank" rel="external">Github Source Code</a>   </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/blog/img/AliPay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/blog/img/WeChatPay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">zsh</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">data mining</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">data analysis</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/blog/categories/linux//" class="article-tag-list-link color1">linux</a>
+        			<a href="/blog/categories/python//" class="article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!--<a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>-->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<!--<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://caoyu.info/blog/grab-qzone.html" alt="微信分享二维码">
+    </div>
+</div>-->
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/blog/grab-neteasecloudmusic.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          抓取网易云音乐歌单
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/blog/springboot-mail.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">springboot整合Mail服务</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Something-needed-before-action"><span class="toc-number">1.</span> <span class="toc-text">1 Something needed before action</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-In-action"><span class="toc-number">2.</span> <span class="toc-text">2 In action</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Something-worth-noting"><span class="toc-number">3.</span> <span class="toc-text">3 Something worth noting</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
+  
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" style="width: 96%;margin: 0 auto;" data-id="city" data-uid="MTAyMC8zMTUxNC84MDc4">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+  
 
 
           </div>
@@ -277,9 +474,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

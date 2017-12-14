@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://caoyu.info/blog">
-  <title>Tag: zsh | 我还是个宝宝!</title>
+  <title>BP神经网络算法(python实现) | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我还是个宝宝!">
-<meta property="og:url" content="https://caoyu.info/blog/tags/zsh/index.html">
+  <meta name="description" content="1 BPNN神经网络是一种运算模型，由大量的节点（或称神经元）之间相互联接构成。 每个节点代表一种特定的输出函数，称为激励函数（activation function）。 每两个节点间的连接都代表一个对于通过该连接信号的加权值，称之为权重，这相当于人工神经网络的记忆。 网络的输出则依网络的连接方式，权重值和激励函数的不同而不同。 而网络自身通常都是对自然界某种算法或者函数的逼近，也可能是对一种逻辑">
+<meta name="keywords" content="python,classification">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BP神经网络算法(python实现)">
+<meta property="og:url" content="https://caoyu.info/blog/bpnn.html">
 <meta property="og:site_name" content="我还是个宝宝!">
+<meta property="og:description" content="1 BPNN神经网络是一种运算模型，由大量的节点（或称神经元）之间相互联接构成。 每个节点代表一种特定的输出函数，称为激励函数（activation function）。 每两个节点间的连接都代表一个对于通过该连接信号的加权值，称之为权重，这相当于人工神经网络的记忆。 网络的输出则依网络的连接方式，权重值和激励函数的不同而不同。 而网络自身通常都是对自然界某种算法或者函数的逼近，也可能是对一种逻辑">
+<meta property="og:updated_time" content="2017-12-14T03:42:17.875Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我还是个宝宝!">
+<meta name="twitter:title" content="BP神经网络算法(python实现)">
+<meta name="twitter:description" content="1 BPNN神经网络是一种运算模型，由大量的节点（或称神经元）之间相互联接构成。 每个节点代表一种特定的输出函数，称为激励函数（activation function）。 每两个节点间的连接都代表一个对于通过该连接信号的加权值，称之为权重，这相当于人工神经网络的记忆。 网络的输出则依网络的连接方式，权重值和激励函数的不同而不同。 而网络自身通常都是对自然界某种算法或者函数的逼近，也可能是对一种逻辑">
   
     <link rel="alternative" href="/atom.xml" title="我还是个宝宝!" type="application/atom+xml">
   
@@ -180,71 +185,261 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-bpnn" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/build-server-zsh.html" class="archive-article-date">
-  	<time datetime="2017-10-13T03:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/build-server-zsh.html">linux服务器初建之zsh安装</a>
+    <h1 class="article-title" itemprop="name">
+      BP神经网络算法(python实现)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <!-- 显示阅读量 -->
+			
+			<br/>
+			<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+			<span class="icon-sort"></span>
+			<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+			          阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+			</span>
+			</a>
+			
+		<!-- 显示阅读量 -->
+        
+        <a href="/blog/bpnn.html" class="archive-article-date">
+  	<time datetime="2017-12-14T03:09:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-BPNN"><a href="#1-BPNN" class="headerlink" title="1 BPNN"></a>1 BPNN</h1><pre><code>神经网络是一种运算模型，由大量的节点（或称神经元）之间相互联接构成。
+每个节点代表一种特定的输出函数，称为激励函数（activation function）。
+每两个节点间的连接都代表一个对于通过该连接信号的加权值，称之为权重，这相当于人工神经网络的记忆。
+网络的输出则依网络的连接方式，权重值和激励函数的不同而不同。
+而网络自身通常都是对自然界某种算法或者函数的逼近，也可能是对一种逻辑策略的表达。
+
+神经网络主要有以下几种类型: 前向型、反馈型、随机型和竞争型。
+BPNN,Back Propagation Neural Network,属于前向型。
+前向型:
+    前馈神经网络是指神经元分层排列，由输入层，隐藏层和输出层构成，其中隐藏层可能会有多层。
+    这种神经网络的每一层的神经元只接受前一层神经元的输入，后面的层对于前面的层没有信号反馈。
+    每一层对于输入数据进行一定的转换，然后将输出结果作为下一层的输入，直到最后输出结果。
+</code></pre><a id="more"></a>
+<h1 id="2-In-action"><a href="#2-In-action" class="headerlink" title="2 In action"></a>2 In action</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="comment"># Created by PyCharm</span></div><div class="line"><span class="comment"># @author  : mystic</span></div><div class="line"><span class="comment"># @date    : 2017/11/23 8:41</span></div><div class="line"><span class="keyword">import</span> datetime</div><div class="line"><span class="keyword">import</span> math</div><div class="line"><span class="keyword">import</span> pickle</div><div class="line"><span class="keyword">import</span> random</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">rand</span><span class="params">(a, b)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">        生成[a,b)区间内的随机数</span></div><div class="line"><span class="string">    :param a:</span></div><div class="line"><span class="string">    :param b:</span></div><div class="line"><span class="string">    :return:</span></div><div class="line"><span class="string">    """</span></div><div class="line">    <span class="keyword">return</span> (b - a) * random.random() + a</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_matrix</span><span class="params">(m, n, fill=<span class="number">0.</span>)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">        生成m*n的矩阵,默认是零矩阵</span></div><div class="line"><span class="string">    :param m:</span></div><div class="line"><span class="string">    :param n:</span></div><div class="line"><span class="string">    :param fill:</span></div><div class="line"><span class="string">    :return:</span></div><div class="line"><span class="string">    """</span></div><div class="line">    matrix = []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</div><div class="line">        matrix.append([fill] * n)</div><div class="line">    <span class="keyword">return</span> matrix</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid</span><span class="params">(x)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">        S型函数:Log-sigmoid和Tan-sigmoid[这里采用Log-sigmoid]</span></div><div class="line"><span class="string">    :param x:</span></div><div class="line"><span class="string">    :return:</span></div><div class="line"><span class="string">    """</span></div><div class="line">    <span class="keyword">return</span> <span class="number">1.0</span> / (<span class="number">1.0</span> + math.exp(-x))</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid_derivative</span><span class="params">(x)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">        S型函数Log-sigmoid的导数</span></div><div class="line"><span class="string">    :param x:</span></div><div class="line"><span class="string">    :return:</span></div><div class="line"><span class="string">    """</span></div><div class="line">    <span class="keyword">return</span> x * (<span class="number">1</span> - x)</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BPNeuralNetwork</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.input_node = <span class="number">0</span></div><div class="line">        self.hidden_node = <span class="number">0</span></div><div class="line">        self.output_node = <span class="number">0</span></div><div class="line">        self.input_cells = []</div><div class="line">        self.hidden_cells = []</div><div class="line">        self.output_cells = []</div><div class="line">        self.input_weights = []</div><div class="line">        self.output_weights = []</div><div class="line">        self.input_correction = []</div><div class="line">        self.output_correction = []</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setup</span><span class="params">(self, ni, nh, no)</span>:</span></div><div class="line">        <span class="comment"># 输入层、隐藏层、输出层的节点(数)</span></div><div class="line">        self.input_node = ni + <span class="number">1</span>  <span class="comment"># 增加一个偏差节点</span></div><div class="line">        self.hidden_node = nh</div><div class="line">        self.output_node = no</div><div class="line">        <span class="comment"># init cells 激活神经网络的所有节点</span></div><div class="line">        self.input_cells = [<span class="number">1.0</span>] * self.input_node</div><div class="line">        self.hidden_cells = [<span class="number">1.0</span>] * self.hidden_node</div><div class="line">        self.output_cells = [<span class="number">1.0</span>] * self.output_node</div><div class="line">        <span class="comment"># init weights 建立输入层到隐含层权重和隐含层到输出层的权重</span></div><div class="line">        self.input_weights = make_matrix(self.input_node, self.hidden_node)</div><div class="line">        self.output_weights = make_matrix(self.hidden_node, self.output_node)</div><div class="line">        <span class="comment"># random activate</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.input_node):</div><div class="line">            <span class="keyword">for</span> h <span class="keyword">in</span> range(self.hidden_node):</div><div class="line">                self.input_weights[i][h] = rand(<span class="number">-0.2</span>, <span class="number">0.2</span>)</div><div class="line">        <span class="keyword">for</span> h <span class="keyword">in</span> range(self.hidden_node):</div><div class="line">            <span class="keyword">for</span> o <span class="keyword">in</span> range(self.output_node):</div><div class="line">                self.output_weights[h][o] = rand(<span class="number">-2.0</span>, <span class="number">2.0</span>)</div><div class="line">        <span class="comment"># init correction matrix 建立动量因子</span></div><div class="line">        self.input_correction = make_matrix(self.input_node, self.hidden_node)</div><div class="line">        self.output_correction = make_matrix(self.hidden_node, self.output_node)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, inputs)</span>:</span></div><div class="line">        <span class="comment"># activate input layer</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.input_node - <span class="number">1</span>):</div><div class="line">            self.input_cells[i] = inputs[i]</div><div class="line">        <span class="comment"># activate hidden layer</span></div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(self.hidden_node):</div><div class="line">            total = <span class="number">0.0</span></div><div class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(self.input_node):</div><div class="line">                total += self.input_cells[i] * self.input_weights[i][j]</div><div class="line">            self.hidden_cells[j] = sigmoid(total)</div><div class="line">        <span class="comment"># activate output layer</span></div><div class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(self.output_node):</div><div class="line">            total = <span class="number">0.0</span></div><div class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(self.hidden_node):</div><div class="line">                total += self.hidden_cells[j] * self.output_weights[j][k]</div><div class="line">            self.output_cells[k] = sigmoid(total)</div><div class="line">        <span class="keyword">return</span> self.output_cells[:]</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">back_propagation</span><span class="params">(self, case, label, learn, correct)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line"><span class="string">            反向传播</span></div><div class="line"><span class="string">        :param case: 样本</span></div><div class="line"><span class="string">        :param label: 期望样本输出值</span></div><div class="line"><span class="string">        :param learn: 学习速率</span></div><div class="line"><span class="string">        :param correct: 动量因子</span></div><div class="line"><span class="string">        :return:</span></div><div class="line"><span class="string">        """</span></div><div class="line">        <span class="comment"># feed forward</span></div><div class="line">        self.predict(case)</div><div class="line">        <span class="comment"># get output layer error</span></div><div class="line">        output_deltas = [<span class="number">0.0</span>] * self.output_node</div><div class="line">        <span class="keyword">for</span> o <span class="keyword">in</span> range(self.output_node):</div><div class="line">            error = label[o] - self.output_cells[o]</div><div class="line">            output_deltas[o] = sigmoid_derivative(self.output_cells[o]) * error</div><div class="line">        <span class="comment"># get hidden layer error</span></div><div class="line">        hidden_deltas = [<span class="number">0.0</span>] * self.hidden_node</div><div class="line">        <span class="keyword">for</span> h <span class="keyword">in</span> range(self.hidden_node):</div><div class="line">            error = <span class="number">0.0</span></div><div class="line">            <span class="keyword">for</span> o <span class="keyword">in</span> range(self.output_node):</div><div class="line">                error += output_deltas[o] * self.output_weights[h][o]</div><div class="line">            hidden_deltas[h] = sigmoid_derivative(self.hidden_cells[h]) * error</div><div class="line">        <span class="comment"># update output weights</span></div><div class="line">        <span class="keyword">for</span> h <span class="keyword">in</span> range(self.hidden_node):</div><div class="line">            <span class="keyword">for</span> o <span class="keyword">in</span> range(self.output_node):</div><div class="line">                change = output_deltas[o] * self.hidden_cells[h]</div><div class="line">                self.output_weights[h][o] += learn * change + correct * self.output_correction[h][o]</div><div class="line">                self.output_correction[h][o] = change</div><div class="line">        <span class="comment"># update input weights</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.input_node):</div><div class="line">            <span class="keyword">for</span> h <span class="keyword">in</span> range(self.hidden_node):</div><div class="line">                change = hidden_deltas[h] * self.input_cells[i]</div><div class="line">                self.input_weights[i][h] += learn * change + correct * self.input_correction[i][h]</div><div class="line">                self.input_correction[i][h] = change</div><div class="line">        <span class="comment"># get global error</span></div><div class="line">        error = <span class="number">0.0</span></div><div class="line">        <span class="keyword">for</span> o <span class="keyword">in</span> range(len(label)):</div><div class="line">            error += <span class="number">0.5</span> * (label[o] - self.output_cells[o]) ** <span class="number">2</span></div><div class="line">        <span class="keyword">return</span> error</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">(self, cases, labels, limit=<span class="number">10000</span>, learn=<span class="number">0.05</span>, correct=<span class="number">0.1</span>)</span>:</span></div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(limit):</div><div class="line">            error = <span class="number">0.0</span></div><div class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(cases)):</div><div class="line">                label = labels[i]</div><div class="line">                case = cases[i]</div><div class="line">                error += self.back_propagation(case, label, learn, correct)</div><div class="line">        <span class="comment"># 返回训练好的权重、动量因子等信息，便于BP网络的保存</span></div><div class="line">        <span class="keyword">return</span> dict(input_node=self.input_node, hidden_node=self.hidden_node, output_node=self.output_node,</div><div class="line">                    input_cells=self.input_cells, hidden_cells=self.hidden_cells, output_cells=self.output_cells,</div><div class="line">                    input_weights=self.input_weights, output_weights=self.output_weights,</div><div class="line">                    input_correction=self.input_correction, output_correction=self.output_correction)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self)</span>:</span></div><div class="line">        cases = [</div><div class="line">            [<span class="number">0</span>, <span class="number">0.321</span>, <span class="number">0</span>, <span class="number">0.54</span>, <span class="number">0.337</span>, <span class="number">0.43</span>, <span class="number">0.64</span>, <span class="number">0</span>, <span class="number">0.618</span>, <span class="number">0.25</span>, <span class="number">0.36</span>, <span class="number">0.321</span>, <span class="number">0</span>, <span class="number">0.54</span>, <span class="number">0.337</span>, <span class="number">0.43</span>, <span class="number">0.64</span>, <span class="number">0</span>, <span class="number">0.618</span>,</div><div class="line">             <span class="number">0.25</span>, <span class="number">0.374</span>],</div><div class="line">            [<span class="number">0</span>, <span class="number">0.43</span>, <span class="number">0.39</span>, <span class="number">0.43</span>, <span class="number">0</span>, <span class="number">0.43</span>, <span class="number">0.55</span>, <span class="number">0.61</span>, <span class="number">0.21</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0.43</span>, <span class="number">0.39</span>, <span class="number">0.43</span>, <span class="number">0</span>, <span class="number">0.43</span>, <span class="number">0.55</span>, <span class="number">0.61</span>, <span class="number">0.21</span>, <span class="number">1</span>,</div><div class="line">             <span class="number">0.21</span>],</div><div class="line">            [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0.66</span>, <span class="number">0</span>, <span class="number">0.13</span>, <span class="number">0.54</span>, <span class="number">0.32</span>, <span class="number">0.33</span>, <span class="number">0.25</span>, <span class="number">0.34</span>, <span class="number">0.52</span>, <span class="number">1</span>, <span class="number">0.66</span>, <span class="number">0</span>, <span class="number">0.13</span>, <span class="number">0.54</span>, <span class="number">0.32</span>, <span class="number">0.33</span>, <span class="number">0.25</span>, <span class="number">0.34</span>,</div><div class="line">             <span class="number">0.86</span>],</div><div class="line">            [<span class="number">0.81</span>, <span class="number">0.31</span>, <span class="number">0.23</span>, <span class="number">0.12</span>, <span class="number">0.32</span>, <span class="number">0.15</span>, <span class="number">0.56</span>, <span class="number">0.12</span>, <span class="number">0.33</span>, <span class="number">0.33</span>, <span class="number">0.42</span>, <span class="number">0.31</span>, <span class="number">0.23</span>, <span class="number">0.12</span>, <span class="number">0.32</span>, <span class="number">0.15</span>, <span class="number">0.56</span>, <span class="number">0.12</span>,</div><div class="line">             <span class="number">0.33</span>, <span class="number">0.33</span>, <span class="number">0.321</span>],</div><div class="line">            [<span class="number">0.61</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.52</span>, <span class="number">0.55</span>, <span class="number">0.56</span>, <span class="number">0.25</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0.76</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.52</span>, <span class="number">0.55</span>, <span class="number">0.56</span>, <span class="number">0.25</span>, <span class="number">1</span>,</div><div class="line">             <span class="number">1</span>, <span class="number">0</span>, <span class="number">0.62</span>],</div><div class="line">            [<span class="number">0.37</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0.832</span>, <span class="number">0.643</span>, <span class="number">0.931</span>, <span class="number">0.821</span>, <span class="number">0.21</span>, <span class="number">0.235</span>, <span class="number">0.841</span>, <span class="number">0.213</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0.832</span>, <span class="number">0.643</span>, <span class="number">0.931</span>, <span class="number">0.821</span>, <span class="number">0.21</span>,</div><div class="line">             <span class="number">0.235</span>, <span class="number">0.841</span>, <span class="number">0.87</span>],</div><div class="line">            [<span class="number">0.42</span>, <span class="number">0.41</span>, <span class="number">0.32</span>, <span class="number">0.451</span>, <span class="number">0.324</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0.543</span>, <span class="number">0.328</span>, <span class="number">0.642</span>, <span class="number">0.872</span>, <span class="number">0.41</span>, <span class="number">0.32</span>, <span class="number">0.451</span>, <span class="number">0.324</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0.543</span>,</div><div class="line">             <span class="number">0.328</span>, <span class="number">0.642</span>, <span class="number">0.76</span>],</div><div class="line">            [<span class="number">0</span>, <span class="number">0.56</span>, <span class="number">0.43</span>, <span class="number">0.872</span>, <span class="number">0.432</span>, <span class="number">0.683</span>, <span class="number">0.5</span>, <span class="number">1</span>, <span class="number">0.52</span>, <span class="number">0.9</span>, <span class="number">0.42</span>, <span class="number">0.56</span>, <span class="number">0.43</span>, <span class="number">0.872</span>, <span class="number">0.432</span>, <span class="number">0.683</span>, <span class="number">0.5</span>, <span class="number">1</span>,</div><div class="line">             <span class="number">0.52</span>, <span class="number">0.9</span>, <span class="number">0.911</span>],</div><div class="line">            [<span class="number">0</span>, <span class="number">0.54</span>, <span class="number">0.62</span>, <span class="number">1</span>, <span class="number">0.24</span>, <span class="number">0.317</span>, <span class="number">0.58</span>, <span class="number">0.82</span>, <span class="number">0.432</span>, <span class="number">0.12</span>, <span class="number">0.9</span>, <span class="number">0.54</span>, <span class="number">0.62</span>, <span class="number">1</span>, <span class="number">0.24</span>, <span class="number">0.317</span>, <span class="number">0.58</span>, <span class="number">0.82</span>,</div><div class="line">             <span class="number">0.432</span>, <span class="number">0.12</span>, <span class="number">0.62</span>],</div><div class="line">            [<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0.231</span>, <span class="number">0.321</span>, <span class="number">0.43</span>, <span class="number">0.42</span>, <span class="number">0.21</span>, <span class="number">0.56</span>, <span class="number">0.21</span>, <span class="number">0.661</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0.231</span>, <span class="number">0.321</span>, <span class="number">0.43</span>, <span class="number">0.42</span>, <span class="number">0.21</span>,</div><div class="line">             <span class="number">0.56</span>, <span class="number">0.21</span>, <span class="number">0.668</span>]</div><div class="line">        ]</div><div class="line">        labels = [[<span class="number">0.257</span>], [<span class="number">0.473</span>], [<span class="number">0.261</span>], [<span class="number">0.561</span>], [<span class="number">0.201</span>], [<span class="number">0.681</span>], [<span class="number">0.697</span>], [<span class="number">0.733</span>], [<span class="number">0.375</span>], [<span class="number">0.583</span>]]</div><div class="line">        self.setup(<span class="number">21</span>, <span class="number">4</span>, <span class="number">1</span>)</div><div class="line">        begin = datetime.datetime.now()</div><div class="line">        save_net = self.train(cases, labels, <span class="number">1000000</span>, <span class="number">0.1</span>, <span class="number">0.1</span>)</div><div class="line">        end = datetime.datetime.now()</div><div class="line">        print(<span class="string">'spend:'</span>, (end - begin))</div><div class="line">        <span class="comment"># 保存网络</span></div><div class="line">        <span class="comment"># with open('resource/bp_net.txt', 'wb') as fw:</span></div><div class="line">        <span class="comment">#     pickle.dump(save_net, fw, 0)</span></div><div class="line">        <span class="keyword">for</span> case <span class="keyword">in</span> cases:</div><div class="line">            print(self.predict(case))</div><div class="line">            <span class="comment"># print(self.predict(</span></div><div class="line">            <span class="comment">#     [1, 1, 1, 0.75, 0.833, 0.688, 0.858, 0.63, 0.859, 0, 0.322, 0.875,</span></div><div class="line">            <span class="comment"># 1, 0, 1, 1, 0.5, 0.834, 0.376, 0.233,1]))</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    nn = BPNeuralNetwork()</div><div class="line">    <span class="comment"># nn.test()</span></div><div class="line">    <span class="comment"># 加载网络</span></div><div class="line">    trained_net = <span class="keyword">None</span></div><div class="line">    <span class="keyword">with</span> open(<span class="string">'resource/bp_net.txt'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> fr:</div><div class="line">        trained_net = pickle.load(fr)</div><div class="line">    nn.input_node = trained_net[<span class="string">'input_node'</span>]</div><div class="line">    nn.hidden_node = trained_net[<span class="string">'hidden_node'</span>]</div><div class="line">    nn.output_node = trained_net[<span class="string">'output_node'</span>]</div><div class="line">    nn.input_cells = trained_net[<span class="string">'input_cells'</span>]</div><div class="line">    nn.hidden_cells = trained_net[<span class="string">'hidden_cells'</span>]</div><div class="line">    nn.output_cells = trained_net[<span class="string">'output_cells'</span>]</div><div class="line">    nn.input_weights = trained_net[<span class="string">'input_weights'</span>]</div><div class="line">    nn.output_weights = trained_net[<span class="string">'output_weights'</span>]</div><div class="line">    nn.input_correction = trained_net[<span class="string">'input_correction'</span>]</div><div class="line">    nn.output_correction = trained_net[<span class="string">'output_correction'</span>]</div><div class="line">    predict_value = nn.predict(</div><div class="line">        [<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0.231</span>, <span class="number">0.321</span>, <span class="number">0.43</span>, <span class="number">0.42</span>, <span class="number">0.21</span>, <span class="number">0.56</span>, <span class="number">0.21</span>, <span class="number">0.661</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0.231</span>, <span class="number">0.321</span>, <span class="number">0.43</span>, <span class="number">0.42</span>, <span class="number">0.21</span>,</div><div class="line">         <span class="number">0.56</span>, <span class="number">0.21</span>, <span class="number">0.668</span>])</div><div class="line">    print(predict_value)</div></pre></td></tr></table></figure>
+<h1 id="3-Something-worth-noting"><a href="#3-Something-worth-noting" class="headerlink" title="3 Something worth noting"></a>3 Something worth noting</h1><p><a href="https://github.com/mystic-cg/MachineLearning.git" target="_blank" rel="external">Github Source Code</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/blog/img/AliPay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/blog/img/WeChatPay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">zsh</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">classification</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/blog/categories/linux//" class="article-tag-list-link color1">linux</a>
+        			<a href="/blog/categories/algorithm//" class="article-tag-list-link color5">algorithm</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!--<a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>-->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<!--<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://caoyu.info/blog/bpnn.html" alt="微信分享二维码">
+    </div>
+</div>-->
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/blog/decision-tree.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          决策树算法(python实现)
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/blog/kNN.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">kNN分类算法(python实现)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-BPNN"><span class="toc-number">1.</span> <span class="toc-text">1 BPNN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-In-action"><span class="toc-number">2.</span> <span class="toc-text">2 In action</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Something-worth-noting"><span class="toc-number">3.</span> <span class="toc-text">3 Something worth noting</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
+  
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" style="width: 96%;margin: 0 auto;" data-id="city" data-uid="MTAyMC8zMTUxNC84MDc4">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+  
 
 
           </div>
@@ -277,9 +472,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

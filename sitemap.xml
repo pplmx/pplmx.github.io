@@ -2,9 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://caoyu.info/blog/decision-tree.html</loc>
+    
+    <lastmod>2017-12-14T06:57:31.490Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caoyu.info/blog/bpnn.html</loc>
+    
+    <lastmod>2017-12-14T03:42:17.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caoyu.info/blog/kNN.html</loc>
+    
+    <lastmod>2017-12-14T03:12:20.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caoyu.info/blog/grab-neteasecloudmusic.html</loc>
+    
+    <lastmod>2017-12-14T02:57:43.441Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caoyu.info/blog/build-server-mysql.html</loc>
+    
+    <lastmod>2017-12-14T02:45:33.239Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caoyu.info/blog/spring-injection-failed.html</loc>
+    
+    <lastmod>2017-12-14T02:45:33.210Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caoyu.info/blog/build-server-tomcat.html</loc>
+    
+    <lastmod>2017-12-14T02:45:33.184Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://caoyu.info/blog/springboot-mail.html</loc>
     
-    <lastmod>2017-11-13T06:52:08.096Z</lastmod>
+    <lastmod>2017-12-14T02:45:33.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caoyu.info/blog/autowired-and-resource.html</loc>
+    
+    <lastmod>2017-12-14T02:45:33.085Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caoyu.info/blog/build-server-zsh.html</loc>
+    
+    <lastmod>2017-12-14T02:45:33.049Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caoyu.info/blog/build-server-java.html</loc>
+    
+    <lastmod>2017-12-14T02:45:33.006Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caoyu.info/blog/grab-qzone.html</loc>
+    
+    <lastmod>2017-12-14T02:42:14.842Z</lastmod>
     
   </url>
   
@@ -12,48 +89,6 @@
     <loc>https://caoyu.info/blog/message-board.html</loc>
     
     <lastmod>2017-10-26T12:54:42.834Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://caoyu.info/blog/build-server-tomcat.html</loc>
-    
-    <lastmod>2017-10-26T12:52:21.666Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://caoyu.info/blog/spring-injection-failed.html</loc>
-    
-    <lastmod>2017-10-26T12:52:21.611Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://caoyu.info/blog/build-server-java.html</loc>
-    
-    <lastmod>2017-10-26T12:52:21.565Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://caoyu.info/blog/build-server-mysql.html</loc>
-    
-    <lastmod>2017-10-26T12:52:21.520Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://caoyu.info/blog/autowired-and-resource.html</loc>
-    
-    <lastmod>2017-10-26T12:52:21.465Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://caoyu.info/blog/build-server-zsh.html</loc>
-    
-    <lastmod>2017-10-26T12:52:21.397Z</lastmod>
     
   </url>
   

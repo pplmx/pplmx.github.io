@@ -1,3 +1,8 @@
+https://caoyu.info/blog/decision-tree.html
+https://caoyu.info/blog/bpnn.html
+https://caoyu.info/blog/kNN.html
+https://caoyu.info/blog/grab-neteasecloudmusic.html
+https://caoyu.info/blog/grab-qzone.html
 https://caoyu.info/blog/springboot-mail.html
 https://caoyu.info/blog/spring-injection-failed.html
 https://caoyu.info/blog/autowired-and-resource.html

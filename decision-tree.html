@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://caoyu.info/blog">
-  <title>Tag: zsh | 我还是个宝宝!</title>
+  <title>决策树算法(python实现) | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我还是个宝宝!">
-<meta property="og:url" content="https://caoyu.info/blog/tags/zsh/index.html">
+  <meta name="description" content="1 Decision Treedecision tree 核心思想:     一种树结构（可以是二叉树或非二叉树）     其每个非叶节点表示一个特征属性上的测试，     每个分支代表这个特征属性在某个值域上的输出，     而每个叶节点存放一个类别 优点:     计算复杂度不高,输出结果易于理解,对中间值缺失不敏感,可以处理不相关特征数据 缺点：     可能会产生过度匹配问题 适用数据范围">
+<meta name="keywords" content="python,classification">
+<meta property="og:type" content="article">
+<meta property="og:title" content="决策树算法(python实现)">
+<meta property="og:url" content="https://caoyu.info/blog/decision-tree.html">
 <meta property="og:site_name" content="我还是个宝宝!">
+<meta property="og:description" content="1 Decision Treedecision tree 核心思想:     一种树结构（可以是二叉树或非二叉树）     其每个非叶节点表示一个特征属性上的测试，     每个分支代表这个特征属性在某个值域上的输出，     而每个叶节点存放一个类别 优点:     计算复杂度不高,输出结果易于理解,对中间值缺失不敏感,可以处理不相关特征数据 缺点：     可能会产生过度匹配问题 适用数据范围">
+<meta property="og:updated_time" content="2017-12-14T06:57:31.490Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我还是个宝宝!">
+<meta name="twitter:title" content="决策树算法(python实现)">
+<meta name="twitter:description" content="1 Decision Treedecision tree 核心思想:     一种树结构（可以是二叉树或非二叉树）     其每个非叶节点表示一个特征属性上的测试，     每个分支代表这个特征属性在某个值域上的输出，     而每个叶节点存放一个类别 优点:     计算复杂度不高,输出结果易于理解,对中间值缺失不敏感,可以处理不相关特征数据 缺点：     可能会产生过度匹配问题 适用数据范围">
   
     <link rel="alternative" href="/atom.xml" title="我还是个宝宝!" type="application/atom+xml">
   
@@ -180,71 +185,252 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-decision-tree" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/build-server-zsh.html" class="archive-article-date">
-  	<time datetime="2017-10-13T03:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/build-server-zsh.html">linux服务器初建之zsh安装</a>
+    <h1 class="article-title" itemprop="name">
+      决策树算法(python实现)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <!-- 显示阅读量 -->
+			
+			<br/>
+			<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+			<span class="icon-sort"></span>
+			<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+			          阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+			</span>
+			</a>
+			
+		<!-- 显示阅读量 -->
+        
+        <a href="/blog/decision-tree.html" class="archive-article-date">
+  	<time datetime="2017-12-14T06:20:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Decision-Tree"><a href="#1-Decision-Tree" class="headerlink" title="1 Decision Tree"></a>1 Decision Tree</h1><pre><code>decision tree
+核心思想:
+    一种树结构（可以是二叉树或非二叉树）
+    其每个非叶节点表示一个特征属性上的测试，
+    每个分支代表这个特征属性在某个值域上的输出，
+    而每个叶节点存放一个类别
+优点:
+    计算复杂度不高,输出结果易于理解,对中间值缺失不敏感,可以处理不相关特征数据
+缺点：
+    可能会产生过度匹配问题
+适用数据范围：
+    数值型和标称型
+</code></pre><a id="more"></a>
+<h1 id="2-In-action"><a href="#2-In-action" class="headerlink" title="2 In action"></a>2 In action</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="comment"># Created by PyCharm</span></div><div class="line"><span class="comment"># @author  : mystic</span></div><div class="line"><span class="comment"># @date    : 2017/11/16 15:59</span></div><div class="line"><span class="keyword">import</span> operator</div><div class="line"><span class="keyword">import</span> pickle</div><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</div><div class="line"><span class="keyword">from</span> math <span class="keyword">import</span> log</div><div class="line"></div><div class="line"><span class="keyword">from</span> tree_plotter <span class="keyword">import</span> create_plot</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_data_set</span><span class="params">()</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">        数据集:</span></div><div class="line"><span class="string">            1.必须是一种由列元素组成的列表,而且所有列表元素均具有相同的数据长度</span></div><div class="line"><span class="string">            2.数据的最后一列或者每一个实例的最后一个元素是当前实例的类别标签</span></div><div class="line"><span class="string">    :return:</span></div><div class="line"><span class="string">    """</span></div><div class="line">    data_set = [</div><div class="line">        [<span class="number">1</span>, <span class="number">1</span>, <span class="string">'yes'</span>],</div><div class="line">        [<span class="number">1</span>, <span class="number">1</span>, <span class="string">'yes'</span>],</div><div class="line">        [<span class="number">1</span>, <span class="number">0</span>, <span class="string">'no'</span>],</div><div class="line">        [<span class="number">0</span>, <span class="number">1</span>, <span class="string">'no'</span>],</div><div class="line">        [<span class="number">0</span>, <span class="number">1</span>, <span class="string">'no'</span>]</div><div class="line">    ]</div><div class="line">    labels = [<span class="string">'no surfacing'</span>, <span class="string">'flippers'</span>]</div><div class="line">    <span class="keyword">return</span> data_set, labels</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc_shannon_entropy</span><span class="params">(data_set)</span>:</span></div><div class="line">    num_entries = len(data_set)</div><div class="line">    label_counts = &#123;&#125;</div><div class="line">    <span class="comment"># 对各类别出现的次数,进行统计</span></div><div class="line">    <span class="keyword">for</span> feat_vector <span class="keyword">in</span> data_set:</div><div class="line">        current_label = feat_vector[<span class="number">-1</span>]</div><div class="line">        <span class="keyword">if</span> current_label <span class="keyword">not</span> <span class="keyword">in</span> label_counts.keys():</div><div class="line">            label_counts[current_label] = <span class="number">0</span></div><div class="line">        label_counts[current_label] += <span class="number">1</span></div><div class="line">    shannon_entropy = <span class="number">0.0</span></div><div class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> label_counts:</div><div class="line">        <span class="comment"># 计算该分类的概率</span></div><div class="line">        probability = label_counts[key] / num_entries</div><div class="line">        <span class="comment"># 通过循环,将各分类的信息期望值相加</span></div><div class="line">        shannon_entropy -= probability * log(probability, <span class="number">2</span>)</div><div class="line">    <span class="comment"># 返回香农熵</span></div><div class="line">    <span class="keyword">return</span> shannon_entropy</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc_shannon_entropy2</span><span class="params">(data_set)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">        通过列表推导式,及Counter,实现香农熵的计算</span></div><div class="line"><span class="string">    :param data_set:</span></div><div class="line"><span class="string">    :return:</span></div><div class="line"><span class="string">    """</span></div><div class="line">    <span class="comment"># 取出'yes','yes','no'等数据放到数组中</span></div><div class="line">    class_count = [sample[<span class="number">-1</span>] <span class="keyword">for</span> sample <span class="keyword">in</span> data_set]</div><div class="line">    <span class="comment"># 获取数据集长度</span></div><div class="line">    length = len(data_set)</div><div class="line">    <span class="comment"># 对'yes','no'等各类别出现的次数,进行统计</span></div><div class="line">    class_count = Counter(class_count)</div><div class="line">    shannon_entropy = <span class="number">0.</span></div><div class="line">    <span class="comment"># 计算香农熵</span></div><div class="line">    <span class="keyword">for</span> times <span class="keyword">in</span> class_count.values():</div><div class="line">        shannon_entropy -= times / length * log(times / length, <span class="number">2</span>)</div><div class="line">    <span class="keyword">return</span> shannon_entropy</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">split_data_set</span><span class="params">(data_set, axis, value)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">        划分数据集</span></div><div class="line"><span class="string">    :param data_set: 待划分的数据集</span></div><div class="line"><span class="string">    :param axis: 划分数据集的特征</span></div><div class="line"><span class="string">    :param value: 需要返回的特征的值</span></div><div class="line"><span class="string">    :return:</span></div><div class="line"><span class="string">    """</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">        append和extend的区别</span></div><div class="line"><span class="string">        &gt;&gt;&gt; a = [1,2,3]</span></div><div class="line"><span class="string">        &gt;&gt;&gt; b = [4,5,6]</span></div><div class="line"><span class="string">        &gt;&gt;&gt; a.append(b)</span></div><div class="line"><span class="string">        &gt;&gt;&gt; a</span></div><div class="line"><span class="string">        [1, 2, 3, [4, 5, 6]]</span></div><div class="line"><span class="string">        &gt;&gt;&gt; a.extend(b)</span></div><div class="line"><span class="string">        &gt;&gt;&gt; a</span></div><div class="line"><span class="string">        [1, 2, 3, [4, 5, 6], 4, 5, 6]</span></div><div class="line"><span class="string">    """</span></div><div class="line">    divided_data_set = []</div><div class="line">    <span class="keyword">for</span> feature_vector <span class="keyword">in</span> data_set:</div><div class="line">        <span class="comment"># if true,就将该值remove,同时添加进divided_data_set</span></div><div class="line">        <span class="keyword">if</span> feature_vector[axis] == value:</div><div class="line">            reduced_feature_vector = feature_vector[:axis]</div><div class="line">            reduced_feature_vector.extend(feature_vector[axis + <span class="number">1</span>:])</div><div class="line">            divided_data_set.append(reduced_feature_vector)</div><div class="line">    <span class="keyword">return</span> divided_data_set</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">choose_best_feature2split</span><span class="params">(data_set)</span>:</span></div><div class="line">    <span class="comment"># 获取特征值的数量</span></div><div class="line">    num_features = len(data_set[<span class="number">0</span>]) - <span class="number">1</span></div><div class="line">    <span class="comment"># 计算原始香农熵</span></div><div class="line">    base_entropy = calc_shannon_entropy2(data_set)</div><div class="line">    <span class="comment"># 最佳信息增益</span></div><div class="line">    best_info_gain = <span class="number">0.</span></div><div class="line">    <span class="comment"># 最佳特征值的位置索引</span></div><div class="line">    best_feature = <span class="number">-1</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(num_features):</div><div class="line">        <span class="comment"># 创建唯一的分类标签列表</span></div><div class="line">        feature_list = [example[i] <span class="keyword">for</span> example <span class="keyword">in</span> data_set]</div><div class="line">        unique_vals = set(feature_list)</div><div class="line">        <span class="comment"># 计算每种划分方式的信息熵</span></div><div class="line">        new_entropy = <span class="number">0.</span></div><div class="line">        <span class="keyword">for</span> value <span class="keyword">in</span> unique_vals:</div><div class="line">            sub_data_set = split_data_set(data_set, i, value)</div><div class="line">            probability = len(sub_data_set) / len(data_set)</div><div class="line">            new_entropy += probability * calc_shannon_entropy2(sub_data_set)</div><div class="line">        <span class="comment"># 计算最好的信息增益</span></div><div class="line">        <span class="comment"># print('原始信息熵为%f' % base_entropy)</span></div><div class="line">        <span class="comment"># print('新的信息熵为%f' % new_entropy)</span></div><div class="line">        info_gain = base_entropy - new_entropy</div><div class="line">        <span class="comment"># print('按照第%d个特征属性划分,信息增益为%f' % (i, info_gain))</span></div><div class="line">        <span class="keyword">if</span> info_gain &gt; best_info_gain:</div><div class="line">            best_info_gain = info_gain</div><div class="line">            best_feature = i</div><div class="line">    <span class="comment"># print('故最佳特征属性的索引为%d' % best_feature)</span></div><div class="line">    <span class="keyword">return</span> best_feature</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">majority_counter</span><span class="params">(class_list)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">        如果数据集已经处理了所有属性,但是类标签依然不是唯一的,我们需要决定如何定义该叶子节点</span></div><div class="line"><span class="string">        此时,我们采用多数表决的方式,决定该叶子节点的分类</span></div><div class="line"><span class="string">    :param class_list:</span></div><div class="line"><span class="string">    :return:</span></div><div class="line"><span class="string">    """</span></div><div class="line">    class_count = &#123;&#125;</div><div class="line">    <span class="keyword">for</span> vote <span class="keyword">in</span> class_list:</div><div class="line">        <span class="keyword">if</span> vote <span class="keyword">not</span> <span class="keyword">in</span> class_count.keys():</div><div class="line">            class_count[vote] = <span class="number">0</span></div><div class="line">        class_count[vote] += <span class="number">1</span></div><div class="line">    sorted_class_count = sorted(class_count.items(), key=operator.itemgetter(<span class="number">1</span>), reverse=<span class="keyword">True</span>)</div><div class="line">    <span class="keyword">return</span> sorted_class_count[<span class="number">0</span>][<span class="number">0</span>]</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify</span><span class="params">(input_tree, feature_labels, test_vector)</span>:</span></div><div class="line">    first_str = list(input_tree.keys())[<span class="number">0</span>]</div><div class="line">    second_dict = input_tree[first_str]</div><div class="line">    <span class="comment"># 将标签字符串转换为索引</span></div><div class="line">    feature_index = feature_labels.index(first_str)</div><div class="line">    class_label = <span class="keyword">None</span></div><div class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> second_dict.keys():</div><div class="line">        <span class="keyword">if</span> test_vector[feature_index] == key:</div><div class="line">            <span class="keyword">if</span> type(second_dict[key]).__name__ == <span class="string">'dict'</span>:</div><div class="line">                class_label = classify(second_dict[key], feature_labels, test_vector)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                class_label = second_dict[key]</div><div class="line">    <span class="keyword">return</span> class_label</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">store_tree</span><span class="params">(input_tree, filename)</span>:</span></div><div class="line">    <span class="keyword">with</span> open(filename, <span class="string">'wb'</span>) <span class="keyword">as</span> fw:</div><div class="line">        <span class="comment"># 0：ASCII协议，所序列化的对象使用可打印的ASCII码表示</span></div><div class="line">        <span class="comment"># 1：老式的二进制协议</span></div><div class="line">        <span class="comment"># 2：2.3版本引入的新二进制协议，较以前的更高效</span></div><div class="line">        <span class="comment"># 其中协议0和1兼容老版本的python</span></div><div class="line">        pickle.dump(input_tree, fw, <span class="number">0</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">grab_tree</span><span class="params">(filename)</span>:</span></div><div class="line">    <span class="keyword">with</span> open(filename, <span class="string">'rb'</span>) <span class="keyword">as</span> read:</div><div class="line">        <span class="keyword">return</span> pickle.load(read)</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_tree</span><span class="params">(data_set, labels)</span>:</span></div><div class="line">    <span class="comment"># 获取类别列表</span></div><div class="line">    class_list = [example[<span class="number">-1</span>] <span class="keyword">for</span> example <span class="keyword">in</span> data_set]</div><div class="line">    <span class="comment"># 类别完全相同,则停止继续划分</span></div><div class="line">    <span class="keyword">if</span> class_list.count(class_list[<span class="number">0</span>]) == len(class_list):</div><div class="line">        <span class="comment"># 若只有一类,则某个类别标签的数量,应该和它的数据长度相等</span></div><div class="line">        <span class="keyword">return</span> class_list[<span class="number">0</span>]</div><div class="line">    <span class="comment"># 遍历完所有特征时,类别标签还是不唯一,则返回出现次数最多的类别</span></div><div class="line">    <span class="keyword">if</span> len(data_set[<span class="number">0</span>]) == <span class="number">1</span>:</div><div class="line">        <span class="keyword">return</span> majority_counter(class_list)</div><div class="line">    <span class="comment"># 最佳特征属性的索引</span></div><div class="line">    best_feature = choose_best_feature2split(data_set)</div><div class="line">    <span class="comment"># 最佳特征标记</span></div><div class="line">    best_feature_label = labels[best_feature]</div><div class="line">    <span class="comment"># 创建字典,存储决策树</span></div><div class="line">    my_tree = &#123;best_feature_label: &#123;&#125;&#125;</div><div class="line">    <span class="keyword">del</span> (labels[best_feature])</div><div class="line">    <span class="comment"># 获取该特征的所有的值</span></div><div class="line">    feature_values = [example[best_feature] <span class="keyword">for</span> example <span class="keyword">in</span> data_set]</div><div class="line">    unique_values = set(feature_values)</div><div class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> unique_values:</div><div class="line">        sub_labels = labels[:]</div><div class="line">        <span class="comment"># 递归不断创建分支</span></div><div class="line">        my_tree[best_feature_label][value] = create_tree(split_data_set(data_set, best_feature, value), sub_labels)</div><div class="line">    <span class="keyword">return</span> my_tree</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="comment"># my_data_set, my_labels = create_data_set()</span></div><div class="line">    <span class="comment"># print(my_data_set)</span></div><div class="line">    <span class="comment"># print(my_labels)</span></div><div class="line">    <span class="comment"># my_shannon_entropy = calc_shannon_entropy(my_data_set)</span></div><div class="line">    <span class="comment"># print(my_shannon_entropy)</span></div><div class="line">    <span class="comment"># print(calc_shannon_entropy2(my_data_set))</span></div><div class="line">    <span class="comment"># decision_tree = create_tree(my_data_set, my_labels)</span></div><div class="line">    <span class="comment"># store_tree(decision_tree, 'resource/classifier_storage.txt')</span></div><div class="line">    <span class="comment"># print(decision_tree)</span></div><div class="line">    <span class="comment"># new_tree = grab_tree('resource/classifier_storage.txt')</span></div><div class="line">    <span class="comment"># print('acquire tree from file:', new_tree)</span></div><div class="line">    <span class="comment"># # 因为my_labels已经在create_tree方法中被改变,故我们生成个新的</span></div><div class="line">    <span class="comment"># my_data_set, my_labels = create_data_set()</span></div><div class="line">    <span class="comment"># print(classify(decision_tree, my_labels, [1, 1]))</span></div><div class="line">    <span class="keyword">with</span> open(<span class="string">'resource/lenses.txt'</span>) <span class="keyword">as</span> fr:</div><div class="line">        lenses = [instance.strip().split(<span class="string">'\t'</span>) <span class="keyword">for</span> instance <span class="keyword">in</span> fr.readlines()]</div><div class="line">        lenses_labels = [<span class="string">'age'</span>, <span class="string">'prescript'</span>, <span class="string">'astigmatic'</span>, <span class="string">'tearRate'</span>]</div><div class="line">        lenses_tree = create_tree(lenses, lenses_labels)</div><div class="line">        print(lenses)</div><div class="line">        print(lenses_labels)</div><div class="line">        print(lenses_tree)</div><div class="line">        create_plot(lenses_tree)</div></pre></td></tr></table></figure>
+<h1 id="3-Something-worth-noting"><a href="#3-Something-worth-noting" class="headerlink" title="3 Something worth noting"></a>3 Something worth noting</h1><p><a href="https://github.com/mystic-cg/MachineLearning.git" target="_blank" rel="external">Github Source Code</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/blog/img/AliPay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/blog/img/WeChatPay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">zsh</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">classification</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/blog/categories/linux//" class="article-tag-list-link color1">linux</a>
+        			<a href="/blog/categories/algorithm//" class="article-tag-list-link color5">algorithm</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!--<a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>-->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<!--<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://caoyu.info/blog/decision-tree.html" alt="微信分享二维码">
+    </div>
+</div>-->
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/blog/bpnn.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BP神经网络算法(python实现)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Decision-Tree"><span class="toc-number">1.</span> <span class="toc-text">1 Decision Tree</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-In-action"><span class="toc-number">2.</span> <span class="toc-text">2 In action</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Something-worth-noting"><span class="toc-number">3.</span> <span class="toc-text">3 Something worth noting</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
+  
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" style="width: 96%;margin: 0 auto;" data-id="city" data-uid="MTAyMC8zMTUxNC84MDc4">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+  
 
 
           </div>
@@ -277,9 +463,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
