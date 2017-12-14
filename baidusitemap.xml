@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>https://caoyu.info/blog/blog/message-board.html</loc>
+    <lastmod>2017-12-14T12:14:11.666Z</lastmod>
+    <data>
+        <display>
+        <title>留言板</title>
+        <pubTime>1969-12-31T16:00:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://caoyu.info/blog/blog/decision-tree.html</loc>
     <lastmod>2017-12-14T06:57:31.490Z</lastmod>
     <data>
@@ -256,21 +271,6 @@
              
               <breadCrumb title="python" url="https://caoyu.info/blog/blog/categories/python/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/message-board.html</loc>
-    <lastmod>2017-10-26T12:54:42.834Z</lastmod>
-    <data>
-        <display>
-        <title>留言板</title>
-        <pubTime>1969-12-31T16:00:00.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>

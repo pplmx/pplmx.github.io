@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://caoyu.info/blog/message-board.html</loc>
+    
+    <lastmod>2017-12-14T12:14:11.666Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://caoyu.info/blog/decision-tree.html</loc>
     
     <lastmod>2017-12-14T06:57:31.490Z</lastmod>
@@ -82,13 +89,6 @@
     <loc>https://caoyu.info/blog/grab-qzone.html</loc>
     
     <lastmod>2017-12-14T02:42:14.842Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://caoyu.info/blog/message-board.html</loc>
-    
-    <lastmod>2017-10-26T12:54:42.834Z</lastmod>
     
   </url>
   
