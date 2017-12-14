@@ -4,7 +4,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/decision-tree.html</loc>
+    <loc>https://caoyu.info/blog/blog/decision-tree.html</loc>
     <lastmod>2017-12-14T06:57:31.490Z</lastmod>
     <data>
         <display>
@@ -18,7 +18,7 @@
          
            
              
-              <breadCrumb title="algorithm" url="https://caoyu.info/blog/categories/algorithm/"/>
+              <breadCrumb title="algorithm" url="https://caoyu.info/blog/blog/categories/algorithm/"/>
           
         </display>
     </data>
@@ -26,7 +26,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/bpnn.html</loc>
+    <loc>https://caoyu.info/blog/blog/bpnn.html</loc>
     <lastmod>2017-12-14T03:42:17.875Z</lastmod>
     <data>
         <display>
@@ -40,7 +40,7 @@
          
            
              
-              <breadCrumb title="algorithm" url="https://caoyu.info/blog/categories/algorithm/"/>
+              <breadCrumb title="algorithm" url="https://caoyu.info/blog/blog/categories/algorithm/"/>
           
         </display>
     </data>
@@ -48,7 +48,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/kNN.html</loc>
+    <loc>https://caoyu.info/blog/blog/kNN.html</loc>
     <lastmod>2017-12-14T03:12:20.813Z</lastmod>
     <data>
         <display>
@@ -62,7 +62,7 @@
          
            
              
-              <breadCrumb title="algorithm" url="https://caoyu.info/blog/categories/algorithm/"/>
+              <breadCrumb title="algorithm" url="https://caoyu.info/blog/blog/categories/algorithm/"/>
           
         </display>
     </data>
@@ -70,7 +70,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/grab-neteasecloudmusic.html</loc>
+    <loc>https://caoyu.info/blog/blog/grab-neteasecloudmusic.html</loc>
     <lastmod>2017-12-14T02:57:43.441Z</lastmod>
     <data>
         <display>
@@ -82,7 +82,7 @@
          
            
              
-              <breadCrumb title="python" url="https://caoyu.info/blog/categories/python/"/>
+              <breadCrumb title="python" url="https://caoyu.info/blog/blog/categories/python/"/>
           
         </display>
     </data>
@@ -90,7 +90,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/build-server-mysql.html</loc>
+    <loc>https://caoyu.info/blog/blog/build-server-mysql.html</loc>
     <lastmod>2017-12-14T02:45:33.239Z</lastmod>
     <data>
         <display>
@@ -102,7 +102,7 @@
          
            
              
-              <breadCrumb title="linux" url="https://caoyu.info/blog/categories/linux/"/>
+              <breadCrumb title="linux" url="https://caoyu.info/blog/blog/categories/linux/"/>
           
         </display>
     </data>
@@ -110,7 +110,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/spring-injection-failed.html</loc>
+    <loc>https://caoyu.info/blog/blog/spring-injection-failed.html</loc>
     <lastmod>2017-12-14T02:45:33.210Z</lastmod>
     <data>
         <display>
@@ -126,7 +126,7 @@
          
            
              
-              <breadCrumb title="java" url="https://caoyu.info/blog/categories/java/"/>
+              <breadCrumb title="java" url="https://caoyu.info/blog/blog/categories/java/"/>
           
         </display>
     </data>
@@ -134,7 +134,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/build-server-tomcat.html</loc>
+    <loc>https://caoyu.info/blog/blog/build-server-tomcat.html</loc>
     <lastmod>2017-12-14T02:45:33.184Z</lastmod>
     <data>
         <display>
@@ -146,7 +146,7 @@
          
            
              
-              <breadCrumb title="linux" url="https://caoyu.info/blog/categories/linux/"/>
+              <breadCrumb title="linux" url="https://caoyu.info/blog/blog/categories/linux/"/>
           
         </display>
     </data>
@@ -154,7 +154,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/springboot-mail.html</loc>
+    <loc>https://caoyu.info/blog/blog/springboot-mail.html</loc>
     <lastmod>2017-12-14T02:45:33.125Z</lastmod>
     <data>
         <display>
@@ -170,7 +170,7 @@
          
            
              
-              <breadCrumb title="java" url="https://caoyu.info/blog/categories/java/"/>
+              <breadCrumb title="java" url="https://caoyu.info/blog/blog/categories/java/"/>
           
         </display>
     </data>
@@ -178,7 +178,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/autowired-and-resource.html</loc>
+    <loc>https://caoyu.info/blog/blog/autowired-and-resource.html</loc>
     <lastmod>2017-12-14T02:45:33.085Z</lastmod>
     <data>
         <display>
@@ -192,7 +192,7 @@
          
            
              
-              <breadCrumb title="java" url="https://caoyu.info/blog/categories/java/"/>
+              <breadCrumb title="java" url="https://caoyu.info/blog/blog/categories/java/"/>
           
         </display>
     </data>
@@ -200,7 +200,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/build-server-zsh.html</loc>
+    <loc>https://caoyu.info/blog/blog/build-server-zsh.html</loc>
     <lastmod>2017-12-14T02:45:33.049Z</lastmod>
     <data>
         <display>
@@ -212,7 +212,7 @@
          
            
              
-              <breadCrumb title="linux" url="https://caoyu.info/blog/categories/linux/"/>
+              <breadCrumb title="linux" url="https://caoyu.info/blog/blog/categories/linux/"/>
           
         </display>
     </data>
@@ -220,7 +220,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/build-server-java.html</loc>
+    <loc>https://caoyu.info/blog/blog/build-server-java.html</loc>
     <lastmod>2017-12-14T02:45:33.006Z</lastmod>
     <data>
         <display>
@@ -232,7 +232,7 @@
          
            
              
-              <breadCrumb title="linux" url="https://caoyu.info/blog/categories/linux/"/>
+              <breadCrumb title="linux" url="https://caoyu.info/blog/blog/categories/linux/"/>
           
         </display>
     </data>
@@ -240,7 +240,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/grab-qzone.html</loc>
+    <loc>https://caoyu.info/blog/blog/grab-qzone.html</loc>
     <lastmod>2017-12-14T02:42:14.842Z</lastmod>
     <data>
         <display>
@@ -254,7 +254,7 @@
          
            
              
-              <breadCrumb title="python" url="https://caoyu.info/blog/categories/python/"/>
+              <breadCrumb title="python" url="https://caoyu.info/blog/blog/categories/python/"/>
           
         </display>
     </data>
@@ -262,7 +262,7 @@
 
     
   <url>
-    <loc>https://caoyu.info/blog/message-board.html</loc>
+    <loc>https://caoyu.info/blog/blog/message-board.html</loc>
     <lastmod>2017-10-26T12:54:42.834Z</lastmod>
     <data>
         <display>
