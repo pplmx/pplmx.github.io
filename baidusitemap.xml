@@ -4,8 +4,54 @@
 
     
   <url>
+    <loc>https://caoyu.info/blog/blog/springboot-mail.html</loc>
+    <lastmod>2019-02-12T11:54:45.033Z</lastmod>
+    <data>
+        <display>
+        <title>springboot整合Mail服务</title>
+        <pubTime>2017-11-13T06:18:09.000Z</pubTime>
+        
+        <tag>idea</tag>
+         
+        <tag>spring</tag>
+         
+        <tag>springboot</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="https://caoyu.info/blog/blog/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://caoyu.info/blog/blog/hexo-nginx-on-centos.html</loc>
+    <lastmod>2019-02-12T11:54:24.376Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo&Nginx on CentOS</title>
+        <pubTime>2019-02-12T11:47:51.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="https://caoyu.info/blog/blog/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://caoyu.info/blog/blog/pick-douban.html</loc>
-    <lastmod>2017-12-22T08:56:55.222Z</lastmod>
+    <lastmod>2019-02-12T11:51:59.898Z</lastmod>
     <data>
         <display>
         <title>抓取豆瓣编程书籍</title>
@@ -182,30 +228,6 @@
            
              
               <breadCrumb title="linux" url="https://caoyu.info/blog/blog/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/springboot-mail.html</loc>
-    <lastmod>2017-12-14T02:45:33.125Z</lastmod>
-    <data>
-        <display>
-        <title>springboot整合Mail服务</title>
-        <pubTime>2017-11-13T06:18:09.000Z</pubTime>
-        
-        <tag>idea</tag>
-         
-        <tag>spring</tag>
-         
-        <tag>springboot</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="https://caoyu.info/blog/blog/categories/java/"/>
           
         </display>
     </data>

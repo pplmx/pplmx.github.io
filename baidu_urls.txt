@@ -1,3 +1,4 @@
+https://caoyu.info/blog/hexo-nginx-on-centos.html
 https://caoyu.info/blog/pick-douban.html
 https://caoyu.info/blog/decision-tree.html
 https://caoyu.info/blog/bpnn.html

@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://caoyu.info/blog/springboot-mail.html</loc>
+    
+    <lastmod>2019-02-12T11:54:45.033Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://caoyu.info/blog/hexo-nginx-on-centos.html</loc>
+    
+    <lastmod>2019-02-12T11:54:24.376Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://caoyu.info/blog/pick-douban.html</loc>
     
-    <lastmod>2017-12-22T08:56:55.222Z</lastmod>
+    <lastmod>2019-02-12T11:51:59.898Z</lastmod>
     
   </url>
   
@@ -61,13 +75,6 @@
     <loc>https://caoyu.info/blog/build-server-tomcat.html</loc>
     
     <lastmod>2017-12-14T02:45:33.184Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://caoyu.info/blog/springboot-mail.html</loc>
-    
-    <lastmod>2017-12-14T02:45:33.125Z</lastmod>
     
   </url>
   

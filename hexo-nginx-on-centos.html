@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://caoyu.info/blog">
-  <title>Archives: 1970 | 我还是个宝宝!</title>
+  <title>Hexo&amp;Nginx on CentOS | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我还是个宝宝!">
-<meta property="og:url" content="https://caoyu.info/blog/archives/1970/index.html">
+  <meta name="description" content="deploy hexo by nginx on centos create some dirs and enter pkgs dir 1mkdir /home/packages &amp;amp;&amp;amp; cd /home/packages  download npm compiled source code and unzip it 12wget https://nodejs.org/dist/v11">
+<meta name="keywords" content="hexo,nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo&amp;Nginx on CentOS">
+<meta property="og:url" content="https://caoyu.info/blog/hexo-nginx-on-centos.html">
 <meta property="og:site_name" content="我还是个宝宝!">
+<meta property="og:description" content="deploy hexo by nginx on centos create some dirs and enter pkgs dir 1mkdir /home/packages &amp;amp;&amp;amp; cd /home/packages  download npm compiled source code and unzip it 12wget https://nodejs.org/dist/v11">
+<meta property="og:updated_time" content="2019-02-12T11:54:24.376Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我还是个宝宝!">
+<meta name="twitter:title" content="Hexo&amp;Nginx on CentOS">
+<meta name="twitter:description" content="deploy hexo by nginx on centos create some dirs and enter pkgs dir 1mkdir /home/packages &amp;amp;&amp;amp; cd /home/packages  download npm compiled source code and unzip it 12wget https://nodejs.org/dist/v11">
   
     <link rel="alternative" href="/atom.xml" title="我还是个宝宝!" type="application/atom+xml">
   
@@ -164,49 +169,276 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-hexo-nginx-on-centos" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/1970" class="archive-year">1970</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/message-board.html" class="archive-article-date">
-  	<time datetime="1969-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>1970-01-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/message-board.html">留言板</a>
+    <h1 class="article-title" itemprop="name">
+      Hexo&amp;Nginx on CentOS
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        <!-- 显示阅读量 -->
+			
+			<br/>
+			<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+			<span class="icon-sort"></span>
+			<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+			          阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+			</span>
+			</a>
+			
+		<!-- 显示阅读量 -->
+        
+        <a href="/blog/hexo-nginx-on-centos.html" class="archive-article-date">
+  	<time datetime="2019-02-12T11:47:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="deploy-hexo-by-nginx-on-centos"><a href="#deploy-hexo-by-nginx-on-centos" class="headerlink" title="deploy hexo by nginx on centos"></a>deploy hexo by nginx on centos</h1><ul>
+<li><p>create some dirs and enter pkgs dir</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /home/packages &amp;&amp; cd /home/packages</div></pre></td></tr></table></figure>
+</li>
+<li><p>download npm compiled source code and unzip it</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget https://nodejs.org/dist/v11.9.0/node-v11.9.0-linux-x64.tar.xz</div><div class="line">tar -xvf node-v11.9.0-linux-x64.tar.xz -C /usr/share/</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>create soft link</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mv /usr/share/node-v11.9.0-linux-x64 /usr/share/nodejs</div><div class="line">ln -s /usr/share/nodejs/bin/node /usr/local/bin/</div><div class="line">ln -s /usr/share/nodejs/bin/npm /usr/local/bin/</div></pre></td></tr></table></figure>
+</li>
+<li><p>install hexo</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div><div class="line">ln -s /usr/share/nodejs/bin/hexo /usr/local/bin/</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="install-nginx"><a href="#install-nginx" class="headerlink" title="install nginx"></a>install nginx</h2><ul>
+<li>configure yum repo<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/yum.repos.d/my.repo</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[nginx-stable]</div><div class="line">name=nginx stable repo</div><div class="line">baseurl=http://nginx.org/packages/centos/$releasever/$basearch/</div><div class="line">gpgcheck=1</div><div class="line">enabled=1</div><div class="line">gpgkey=https://nginx.org/keys/nginx_signing.key</div><div class="line"></div><div class="line">[nginx-mainline]</div><div class="line">name=nginx mainline repo</div><div class="line">baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/</div><div class="line">gpgcheck=1</div><div class="line">enabled=0</div><div class="line">gpgkey=https://nginx.org/keys/nginx_signing.key</div></pre></td></tr></table></figure>
+<ul>
+<li>install nginx and start it<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum install -y nginx</div><div class="line">systemctl start nginx &amp;&amp; systemctl enable nginx</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>init hexo project</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /home/website &amp;&amp; cd /home/website &amp;&amp; hexo init &amp;&amp; hexo g</div></pre></td></tr></table></figure>
+</li>
+<li><p>refer to hexo public dir</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/nginx/conf.d/default.conf</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">location / &#123;                    </div><div class="line">    root   /home/website/public;</div><div class="line">    index  index.html index.htm;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl restart nginx</div></pre></td></tr></table></figure>
+<h2 id="—"><a href="#—" class="headerlink" title="—"></a>—</h2><p>Now, you can access your blog by your IP address.</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/blog/img/AliPay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/blog/img/WeChatPay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/blog/categories/linux//" class="article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!--<a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>-->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<!--<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://caoyu.info/blog/hexo-nginx-on-centos.html" alt="微信分享二维码">
+    </div>
+</div>-->
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/blog/pick-douban.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">抓取豆瓣编程书籍</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#deploy-hexo-by-nginx-on-centos"><span class="toc-number">1.</span> <span class="toc-text">deploy hexo by nginx on centos</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#install-nginx"><span class="toc-number">1.1.</span> <span class="toc-text">install nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#—"><span class="toc-number">1.2.</span> <span class="toc-text">—</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
+  
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" style="width: 96%;margin: 0 auto;" data-id="city" data-uid="MTAyMC8zMTUxNC84MDc4">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+  
 
 
           </div>
@@ -240,8 +472,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
