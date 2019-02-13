@@ -1,322 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-    
   <url>
-    <loc>https://caoyu.info/blog/blog/springboot-mail.html</loc>
-    <lastmod>2019-02-12T11:54:45.033Z</lastmod>
-    <data>
-        <display>
-        <title>springboot整合Mail服务</title>
-        <pubTime>2017-11-13T06:18:09.000Z</pubTime>
-        
-        <tag>idea</tag>
-         
-        <tag>spring</tag>
-         
-        <tag>springboot</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="https://caoyu.info/blog/blog/categories/java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/hexo-nginx-on-centos.html</loc>
-    <lastmod>2019-02-12T11:54:24.376Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo&Nginx on CentOS</title>
-        <pubTime>2019-02-12T11:47:51.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="https://caoyu.info/blog/blog/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/pick-douban.html</loc>
-    <lastmod>2019-02-12T11:51:59.898Z</lastmod>
-    <data>
-        <display>
-        <title>抓取豆瓣编程书籍</title>
-        <pubTime>2017-12-22T06:07:46.000Z</pubTime>
-        
-        <tag>data mining</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="https://caoyu.info/blog/blog/categories/java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/message-board.html</loc>
-    <lastmod>2017-12-14T12:14:11.667Z</lastmod>
-    <data>
-        <display>
-        <title>留言板</title>
-        <pubTime>1969-12-31T16:00:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/decision-tree.html</loc>
-    <lastmod>2017-12-14T06:57:31.491Z</lastmod>
-    <data>
-        <display>
-        <title>决策树算法(python实现)</title>
-        <pubTime>2017-12-14T06:20:30.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>classification</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://caoyu.info/blog/blog/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/bpnn.html</loc>
-    <lastmod>2017-12-14T03:42:17.876Z</lastmod>
-    <data>
-        <display>
-        <title>BP神经网络算法(python实现)</title>
-        <pubTime>2017-12-14T03:09:39.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>classification</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://caoyu.info/blog/blog/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/kNN.html</loc>
-    <lastmod>2017-12-14T03:12:20.814Z</lastmod>
-    <data>
-        <display>
-        <title>kNN分类算法(python实现)</title>
-        <pubTime>2017-12-14T02:51:53.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>classification</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://caoyu.info/blog/blog/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/grab-neteasecloudmusic.html</loc>
-    <lastmod>2017-12-14T02:57:43.441Z</lastmod>
-    <data>
-        <display>
-        <title>抓取网易云音乐歌单</title>
-        <pubTime>2017-12-14T02:13:45.000Z</pubTime>
-        
-        <tag>data mining</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="https://caoyu.info/blog/blog/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/build-server-mysql.html</loc>
-    <lastmod>2017-12-14T02:45:33.240Z</lastmod>
-    <data>
-        <display>
-        <title>linux服务器初建之mysql安装</title>
-        <pubTime>2017-10-13T00:33:23.000Z</pubTime>
-        
-        <tag>mysql</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="https://caoyu.info/blog/blog/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/spring-injection-failed.html</loc>
-    <lastmod>2017-12-14T02:45:33.210Z</lastmod>
-    <data>
-        <display>
-        <title>spring注入null</title>
-        <pubTime>2017-10-19T06:06:41.000Z</pubTime>
-        
-        <tag>idea</tag>
-         
-        <tag>di</tag>
-         
-        <tag>spring</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="https://caoyu.info/blog/blog/categories/java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/build-server-tomcat.html</loc>
-    <lastmod>2017-12-14T02:45:33.184Z</lastmod>
-    <data>
-        <display>
-        <title>linux服务器初建之tomcat安装</title>
-        <pubTime>2017-10-13T02:31:14.000Z</pubTime>
-        
-        <tag>tomcat</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="https://caoyu.info/blog/blog/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/autowired-and-resource.html</loc>
-    <lastmod>2017-12-14T02:45:33.086Z</lastmod>
-    <data>
-        <display>
-        <title>IDEA对@Autowired的使用提示警告</title>
-        <pubTime>2017-10-16T07:41:38.000Z</pubTime>
-        
-        <tag>idea</tag>
-         
-        <tag>di</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="https://caoyu.info/blog/blog/categories/java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/build-server-zsh.html</loc>
-    <lastmod>2017-12-14T02:45:33.050Z</lastmod>
-    <data>
-        <display>
-        <title>linux服务器初建之zsh安装</title>
-        <pubTime>2017-10-13T03:10:44.000Z</pubTime>
-        
-        <tag>zsh</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="https://caoyu.info/blog/blog/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/build-server-java.html</loc>
-    <lastmod>2017-12-14T02:45:33.007Z</lastmod>
-    <data>
-        <display>
-        <title>linux服务器初建之java环境</title>
-        <pubTime>2017-10-13T01:48:25.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="https://caoyu.info/blog/blog/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://caoyu.info/blog/blog/grab-qzone.html</loc>
-    <lastmod>2017-12-14T02:42:14.843Z</lastmod>
-    <data>
-        <display>
-        <title>抓取好友说说,进行简单的分析</title>
-        <pubTime>2017-12-14T01:25:22.000Z</pubTime>
-        
-        <tag>data mining</tag>
-         
-        <tag>data analysis</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="https://caoyu.info/blog/blog/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
+    <loc>https://blog.caoyu.info/springboot-mail.html</loc>
+    <lastmod>2019-02-12</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/hexo-nginx-on-centos.html</loc>
+    <lastmod>2019-02-12</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/pick-douban.html</loc>
+    <lastmod>2019-02-12</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/message-board.html</loc>
+    <lastmod>2017-12-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/decision-tree.html</loc>
+    <lastmod>2017-12-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/bpnn.html</loc>
+    <lastmod>2017-12-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/kNN.html</loc>
+    <lastmod>2017-12-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/grab-neteasecloudmusic.html</loc>
+    <lastmod>2017-12-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/build-server-mysql.html</loc>
+    <lastmod>2017-12-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/spring-injection-failed.html</loc>
+    <lastmod>2017-12-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/build-server-tomcat.html</loc>
+    <lastmod>2017-12-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/autowired-and-resource.html</loc>
+    <lastmod>2017-12-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/build-server-zsh.html</loc>
+    <lastmod>2017-12-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/build-server-java.html</loc>
+    <lastmod>2017-12-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.caoyu.info/grab-qzone.html</loc>
+    <lastmod>2017-12-14</lastmod>
+  </url>
 </urlset>
