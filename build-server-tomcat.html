@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://blog.caoyu.info">
   <title>linux服务器初建之tomcat安装 | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,6 +15,7 @@
 <meta property="og:url" content="https://blog.caoyu.info/build-server-tomcat.html">
 <meta property="og:site_name" content="我还是个宝宝!">
 <meta property="og:description" content="安装tomcat1 安装tomcat1sudo yum install tomcat 2 安装管理包1sudo yum install tomcat-webapps tomcat-admin-webapps">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-12-14T02:45:33.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux服务器初建之tomcat安装">
@@ -60,7 +61,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -182,7 +183,7 @@ var _hmt = _hmt || [];
 
         <!-- 显示阅读量 -->
 			
-			<br/>
+			<br>
 			<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
 			<span class="icon-sort"></span>
 			<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
@@ -200,14 +201,14 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h1><h2 id="1-安装tomcat"><a href="#1-安装tomcat" class="headerlink" title="1 安装tomcat"></a>1 安装tomcat</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum install tomcat</div></pre></td></tr></table></figure>
-<h2 id="2-安装管理包"><a href="#2-安装管理包" class="headerlink" title="2 安装管理包"></a>2 安装管理包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum install tomcat-webapps tomcat-admin-webapps</div></pre></td></tr></table></figure>
+        <h1 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h1><h2 id="1-安装tomcat"><a href="#1-安装tomcat" class="headerlink" title="1 安装tomcat"></a>1 安装tomcat</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install tomcat</span><br></pre></td></tr></table></figure>
+<h2 id="2-安装管理包"><a href="#2-安装管理包" class="headerlink" title="2 安装管理包"></a>2 安装管理包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install tomcat-webapps tomcat-admin-webapps</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="3-安装在线文档"><a href="#3-安装在线文档" class="headerlink" title="3 安装在线文档"></a>3 安装在线文档</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum install tomcat-docs-webapp tomcat-javadoc</div></pre></td></tr></table></figure>
-<h2 id="4-配置tomcat管理页面"><a href="#4-配置tomcat管理页面" class="headerlink" title="4 配置tomcat管理页面"></a>4 配置tomcat管理页面</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /usr/share/tomcat/conf/tomcat-users.xml</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;tomcat-users&gt;</div><div class="line">    &lt;user username=&quot;admin&quot; password=&quot;admin&quot; roles=&quot;manager-gui,admin-gui&quot;/&gt;</div><div class="line">&lt;/tomcat-users&gt;</div></pre></td></tr></table></figure>
-<h2 id="5-重启"><a href="#5-重启" class="headerlink" title="5 重启"></a>5 重启</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service tomcat restart</div></pre></td></tr></table></figure>
-<h2 id="6-访问试试"><a href="#6-访问试试" class="headerlink" title="6 访问试试"></a>6 访问试试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">http://yourIP:8080</div><div class="line">http://yourIP:8080/manager/html</div></pre></td></tr></table></figure>
+<h2 id="3-安装在线文档"><a href="#3-安装在线文档" class="headerlink" title="3 安装在线文档"></a>3 安装在线文档</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install tomcat-docs-webapp tomcat-javadoc</span><br></pre></td></tr></table></figure>
+<h2 id="4-配置tomcat管理页面"><a href="#4-配置tomcat管理页面" class="headerlink" title="4 配置tomcat管理页面"></a>4 配置tomcat管理页面</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /usr/share/tomcat/conf/tomcat-users.xml</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">    &lt;user username=&quot;admin&quot; password=&quot;admin&quot; roles=&quot;manager-gui,admin-gui&quot;/&gt;</span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="5-重启"><a href="#5-重启" class="headerlink" title="5 重启"></a>5 重启</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service tomcat restart</span><br></pre></td></tr></table></figure>
+<h2 id="6-访问试试"><a href="#6-访问试试" class="headerlink" title="6 访问试试"></a>6 访问试试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://yourIP:8080</span><br><span class="line">http://yourIP:8080/manager/html</span><br></pre></td></tr></table></figure>
 
       
 
@@ -548,15 +549,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,7 +577,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

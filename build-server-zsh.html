@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://blog.caoyu.info">
   <title>linux服务器初建之zsh安装 | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,6 +15,7 @@
 <meta property="og:url" content="https://blog.caoyu.info/build-server-zsh.html">
 <meta property="og:site_name" content="我还是个宝宝!">
 <meta property="og:description" content="安装zshroot下操作 1 安装zsh1yum -y install zsh 2 切换bash至zsh12chsh -s /bin/zshreboot">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-12-14T02:45:33.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux服务器初建之zsh安装">
@@ -60,7 +61,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -182,7 +183,7 @@ var _hmt = _hmt || [];
 
         <!-- 显示阅读量 -->
 			
-			<br/>
+			<br>
 			<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
 			<span class="icon-sort"></span>
 			<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
@@ -201,11 +202,11 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h1><pre><code>root下操作
-</code></pre><h2 id="1-安装zsh"><a href="#1-安装zsh" class="headerlink" title="1 安装zsh"></a>1 安装zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install zsh</div></pre></td></tr></table></figure>
-<h2 id="2-切换bash至zsh"><a href="#2-切换bash至zsh" class="headerlink" title="2 切换bash至zsh"></a>2 切换bash至zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chsh -s /bin/zsh</div><div class="line">reboot</div></pre></td></tr></table></figure>
+</code></pre><h2 id="1-安装zsh"><a href="#1-安装zsh" class="headerlink" title="1 安装zsh"></a>1 安装zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zsh</span><br></pre></td></tr></table></figure>
+<h2 id="2-切换bash至zsh"><a href="#2-切换bash至zsh" class="headerlink" title="2 切换bash至zsh"></a>2 切换bash至zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="3-安装oh-my-zsh"><a href="#3-安装oh-my-zsh" class="headerlink" title="3 安装oh-my-zsh"></a>3 安装oh-my-zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum -y install git</div><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">         __                                     __   </div><div class="line">  ____  / /_     ____ ___  __  __   ____  _____/ /_  </div><div class="line"> / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \ </div><div class="line">/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / / </div><div class="line">\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/  </div><div class="line">                        /____/                       ....is now installed!</div><div class="line">Please look over the ~/.zshrc file to select plugins, themes, and options.</div><div class="line"></div><div class="line">p.s. Follow us at https://twitter.com/ohmyzsh.</div><div class="line"></div><div class="line">p.p.s. Get stickers and t-shirts at http://shop.planetargon.com.</div></pre></td></tr></table></figure>
+<h2 id="3-安装oh-my-zsh"><a href="#3-安装oh-my-zsh" class="headerlink" title="3 安装oh-my-zsh"></a>3 安装oh-my-zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install git</span><br><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">         __                                     __   </span><br><span class="line">  ____  / /_     ____ ___  __  __   ____  _____/ /_  </span><br><span class="line"> / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \ </span><br><span class="line">/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / / </span><br><span class="line">\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/  </span><br><span class="line">                        /____/                       ....is now installed!</span><br><span class="line">Please look over the ~/.zshrc file to select plugins, themes, and options.</span><br><span class="line"></span><br><span class="line">p.s. Follow us at https://twitter.com/ohmyzsh.</span><br><span class="line"></span><br><span class="line">p.p.s. Get stickers and t-shirts at http://shop.planetargon.com.</span><br></pre></td></tr></table></figure>
 <h2 id="4-安装成功"><a href="#4-安装成功" class="headerlink" title="4 安装成功"></a>4 安装成功</h2><pre><code>出现如上图案,表示修改成功了
 如果你需要继续修改zsh的主题,或是添加插件
 可以在~/.zshrc文件中修改
@@ -549,15 +550,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,7 +578,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

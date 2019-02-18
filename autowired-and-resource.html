@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://blog.caoyu.info">
   <title>IDEA对@Autowired的使用提示警告 | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,6 +15,7 @@
 <meta property="og:url" content="https://blog.caoyu.info/autowired-and-resource.html">
 <meta property="og:site_name" content="我还是个宝宝!">
 <meta property="og:description" content="1 idea警告信息Spring Team recommends: &amp;quot;Always use constructor based dependency injection in your beans. Always use assertions for mandatory dependencies&amp;quot;. Spring Team建议：“在你的bean中,使用基于构造函数的依赖注入;并">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-12-14T02:45:33.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IDEA对@Autowired的使用提示警告">
@@ -60,7 +61,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -182,7 +183,7 @@ var _hmt = _hmt || [];
 
         <!-- 显示阅读量 -->
 			
-			<br/>
+			<br>
 			<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
 			<span class="icon-sort"></span>
 			<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
@@ -202,12 +203,12 @@ var _hmt = _hmt || [];
       
         <h1 id="1-idea警告信息"><a href="#1-idea警告信息" class="headerlink" title="1 idea警告信息"></a>1 idea警告信息</h1><pre><code>Spring Team recommends: &quot;Always use constructor based dependency injection in your beans. Always use assertions for mandatory dependencies&quot;.
 Spring Team建议：“在你的bean中,使用基于构造函数的依赖注入;并且使用强制依赖关系的断言”。
-</code></pre><h1 id="2-被警告的代码"><a href="#2-被警告的代码" class="headerlink" title="2 被警告的代码"></a>2 被警告的代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Autowired</span></div><div class="line"><span class="keyword">private</span> UserService userService;</div></pre></td></tr></table></figure>
+</code></pre><h1 id="2-被警告的代码"><a href="#2-被警告的代码" class="headerlink" title="2 被警告的代码"></a>2 被警告的代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h1 id="3-Spring-Team推荐的写法"><a href="#3-Spring-Team推荐的写法" class="headerlink" title="3 Spring Team推荐的写法"></a>3 Spring Team推荐的写法</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> UserService userService;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">UserController</span><span class="params">(UserService userService)</span></span>&#123;</div><div class="line">    <span class="keyword">this</span>.userService = userService;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="3-Spring-Team推荐的写法"><a href="#3-Spring-Team推荐的写法" class="headerlink" title="3 Spring Team推荐的写法"></a>3 Spring Team推荐的写法</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">UserController</span><span class="params">(UserService userService)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.userService = userService;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>Spring Team推荐使用构造器注入,我猜测是java变量初始化顺序的原因
 Java变量的初始化顺序为：静态变量或静态代码块–&gt;实例变量或初始化代码块–&gt;构造方法 - &gt;@Autowired
-</code></pre><h1 id="4-或者使用-Resource"><a href="#4-或者使用-Resource" class="headerlink" title="4 或者使用@Resource"></a>4 或者使用@Resource</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Resource</span></div><div class="line"><span class="keyword">private</span> UserService userService;</div></pre></td></tr></table></figure>
+</code></pre><h1 id="4-或者使用-Resource"><a href="#4-或者使用-Resource" class="headerlink" title="4 或者使用@Resource"></a>4 或者使用@Resource</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
 <h1 id="5-简析-Resource和-Autowired"><a href="#5-简析-Resource和-Autowired" class="headerlink" title="5 简析@Resource和@Autowired"></a>5 简析@Resource和@Autowired</h1><h2 id="5-1-Resource"><a href="#5-1-Resource" class="headerlink" title="5.1 @Resource"></a>5.1 @Resource</h2><pre><code>默认按照byName自动注入,由J2EE提供,需要导入javax.annotation.Resource
 它有两个重要的属性name和type,而Spring将@Resource注解的name属性解析为bean的名字,而type属性则解析为bean的类型
 所以,如果使用name属性,则使用byName的自动注入策略,而使用type属性时则使用byType自动注入策略
@@ -216,7 +217,7 @@ Java变量的初始化顺序为：静态变量或静态代码块–&gt;实例变
 默认情况要求对象必须存在,如果需要为null,可以设置它的required=true
 如果接口存在多个实现类,我们依然可以byName自动注入:通过与@Qualifier搭配使用
 即先byType,byType匹配到多个时,再通过byName
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Autowired</span></div><div class="line"><span class="meta">@Qualifier</span>(<span class="string">"userServiceForXXX"</span>)</div><div class="line"><span class="keyword">private</span> UserService userService;</div></pre></td></tr></table></figure>
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="meta">@Qualifier</span>(<span class="string">"userServiceForXXX"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -561,15 +562,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -589,7 +590,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

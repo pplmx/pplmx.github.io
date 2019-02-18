@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://blog.caoyu.info">
   <title>spring注入null | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,6 +15,7 @@
 <meta property="og:url" content="https://blog.caoyu.info/spring-injection-failed.html">
 <meta property="og:site_name" content="我还是个宝宝!">
 <meta property="og:description" content="1 not the injection failed,but NPE为什么这么说呢,因为我的错误信息是空指针异常,而不是注入失败的错误信息">
+<meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2017/10/19/59e8499fdd607.png">
 <meta property="og:updated_time" content="2017-12-14T02:45:33.210Z">
 <meta name="twitter:card" content="summary">
@@ -62,7 +63,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -184,7 +185,7 @@ var _hmt = _hmt || [];
 
         <!-- 显示阅读量 -->
 			
-			<br/>
+			<br>
 			<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
 			<span class="icon-sort"></span>
 			<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
@@ -202,7 +203,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-not-the-injection-failed-but-NPE"><a href="#1-not-the-injection-failed-but-NPE" class="headerlink" title="1 not the injection failed,but NPE"></a>1 not the injection failed,but NPE</h1><p>为什么这么说呢,因为我的错误信息是空指针异常,而不是注入失败的错误信息<br><a id="more"></a><br><img src="https://i.loli.net/2017/10/19/59e8499fdd607.png" alt="参考图片"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Created with IntelliJ IDEA.</div><div class="line"> *</div><div class="line"> * @author: mystic</div><div class="line"> * @date: 2017/10/19 8:54</div><div class="line"> * @since: JDK1.8.0_144</div><div class="line"> * @version: X</div><div class="line"> * Description: 自定义身份认证验证组件</div><div class="line"> */</div><div class="line">@Component</div><div class="line">class CustomAuthenticationProvider implements AuthenticationProvider &#123;</div><div class="line"></div><div class="line">    @Resource</div><div class="line">    private UserService userService;</div><div class="line"></div><div class="line">    private static CustomAuthenticationProvider provider;</div><div class="line"></div><div class="line">    public void setUserService(UserService userService) &#123;</div><div class="line">        this.userService = userService;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @PostConstruct</div><div class="line">    public void init()&#123;</div><div class="line">        provider = this;</div><div class="line">        // 初始化时,将已经静态化的userService实例化</div><div class="line">        provider.userService = this.userService;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Authentication authenticate(Authentication authentication) throws AuthenticationException &#123;</div><div class="line">        // 获取认证的用户名 &amp; 密码</div><div class="line">        String name = authentication.getName();</div><div class="line">        String password = authentication.getCredentials().toString();</div><div class="line"></div><div class="line">        Map&lt;String,Object&gt; condition = new HashMap&lt;&gt;(16);</div><div class="line">        condition.put(&quot;userName&quot;,name);</div><div class="line">        condition.put(&quot;userPWD&quot;,password);</div><div class="line"></div><div class="line">        System.out.println(&quot;userService = &quot; + userService);</div><div class="line">        System.out.println(&quot;provider.userService = &quot; + provider.userService);</div><div class="line">        // 调用看这里,看这里,一定要看这里喔!!!</div><div class="line">        List&lt;Map&lt;String,Object&gt;&gt; userList = provider.userService.findUser(condition);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <h1 id="1-not-the-injection-failed-but-NPE"><a href="#1-not-the-injection-failed-but-NPE" class="headerlink" title="1 not the injection failed,but NPE"></a>1 not the injection failed,but NPE</h1><p>为什么这么说呢,因为我的错误信息是空指针异常,而不是注入失败的错误信息<br><a id="more"></a><br><img src="https://i.loli.net/2017/10/19/59e8499fdd607.png" alt="参考图片"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Created with IntelliJ IDEA.</span><br><span class="line"> *</span><br><span class="line"> * @author: mystic</span><br><span class="line"> * @date: 2017/10/19 8:54</span><br><span class="line"> * @since: JDK1.8.0_144</span><br><span class="line"> * @version: X</span><br><span class="line"> * Description: 自定义身份认证验证组件</span><br><span class="line"> */</span><br><span class="line">@Component</span><br><span class="line">class CustomAuthenticationProvider implements AuthenticationProvider &#123;</span><br><span class="line"></span><br><span class="line">    @Resource</span><br><span class="line">    private UserService userService;</span><br><span class="line"></span><br><span class="line">    private static CustomAuthenticationProvider provider;</span><br><span class="line"></span><br><span class="line">    public void setUserService(UserService userService) &#123;</span><br><span class="line">        this.userService = userService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @PostConstruct</span><br><span class="line">    public void init()&#123;</span><br><span class="line">        provider = this;</span><br><span class="line">        // 初始化时,将已经静态化的userService实例化</span><br><span class="line">        provider.userService = this.userService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Authentication authenticate(Authentication authentication) throws AuthenticationException &#123;</span><br><span class="line">        // 获取认证的用户名 &amp; 密码</span><br><span class="line">        String name = authentication.getName();</span><br><span class="line">        String password = authentication.getCredentials().toString();</span><br><span class="line"></span><br><span class="line">        Map&lt;String,Object&gt; condition = new HashMap&lt;&gt;(16);</span><br><span class="line">        condition.put(&quot;userName&quot;,name);</span><br><span class="line">        condition.put(&quot;userPWD&quot;,password);</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;userService = &quot; + userService);</span><br><span class="line">        System.out.println(&quot;provider.userService = &quot; + provider.userService);</span><br><span class="line">        // 调用看这里,看这里,一定要看这里喔!!!</span><br><span class="line">        List&lt;Map&lt;String,Object&gt;&gt; userList = provider.userService.findUser(condition);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="2-yeah"><a href="#2-yeah" class="headerlink" title="2 yeah"></a>2 yeah</h1><p>至于产生这种现象的原因,我也没搞太清,猜测是加载顺序的问题,有懂的小伙伴,<br>可以评论留言告诉我(评论留言功能还没做呢o(╯□╰)o)</p>
 
       
@@ -552,15 +553,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,7 +581,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://blog.caoyu.info">
   <title>linux服务器初建之java环境 | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,6 +15,7 @@
 <meta property="og:url" content="https://blog.caoyu.info/build-server-java.html">
 <meta property="og:site_name" content="我还是个宝宝!">
 <meta property="og:description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境)12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-12-14T02:45:33.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux服务器初建之java环境">
@@ -60,7 +61,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -182,7 +183,7 @@ var _hmt = _hmt || [];
 
         <!-- 显示阅读量 -->
 			
-			<br/>
+			<br>
 			<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
 			<span class="icon-sort"></span>
 			<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
@@ -202,12 +203,12 @@ var _hmt = _hmt || [];
       
         <h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><p>如果命令显示无权限,请加sudo,或是进入root用户;</p>
 <p>若是目录无权限访问,请给相关用户设置相应的访问权限-rwx</p>
-<h2 id="1-查看是否存在jdk环境"><a href="#1-查看是否存在jdk环境" class="headerlink" title="1 查看是否存在jdk环境"></a>1 查看是否存在jdk环境</h2><p>(根据需求决定是否卸载已存在的环境)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum list installed |grep java</div><div class="line">yum -y remove java-1.8.0-openjdk*  <span class="comment"># 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载</span></div></pre></td></tr></table></figure></p>
+<h2 id="1-查看是否存在jdk环境"><a href="#1-查看是否存在jdk环境" class="headerlink" title="1 查看是否存在jdk环境"></a>1 查看是否存在jdk环境</h2><p>(根据需求决定是否卸载已存在的环境)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum list installed |grep java</span><br><span class="line">yum -y remove java-1.8.0-openjdk*  <span class="comment"># 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载</span></span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<h2 id="2-安装jdk"><a href="#2-安装jdk" class="headerlink" title="2 安装jdk"></a>2 安装jdk</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yum -y list java*  <span class="comment"># 查看jdk软件包列表</span></div><div class="line">yum install java-1.8.0-openjdk*  <span class="comment"># 安装所有java程序</span></div><div class="line"><span class="comment"># 如果不是所有程序都需要,也可仅执行如下命令</span></div><div class="line">yum install java-1.8.0-openjdk java-1.8.0-openjdk-devel</div><div class="line">java -version  <span class="comment"># 查看jdk版本号</span></div></pre></td></tr></table></figure>
-<h2 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3 配置环境变量"></a>3 配置环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/profile <span class="comment"># 编辑该文件</span></div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># set java environment  </div><div class="line">JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.144-0.b01.el7_4.x86_64</div><div class="line">PATH=$PATH:$JAVA_HOME/bin  </div><div class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar  </div><div class="line">export JAVA_HOME  CLASSPATH  PATH</div></pre></td></tr></table></figure>
-<p>退出并保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">. /etc/profile   <span class="comment"># 注意:那里是需要空格的</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span>  <span class="comment"># 查看</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$CLASSPATH</span>  <span class="comment"># 查看</span></div></pre></td></tr></table></figure></p>
+<h2 id="2-安装jdk"><a href="#2-安装jdk" class="headerlink" title="2 安装jdk"></a>2 安装jdk</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum -y list java*  <span class="comment"># 查看jdk软件包列表</span></span><br><span class="line">yum install java-1.8.0-openjdk*  <span class="comment"># 安装所有java程序</span></span><br><span class="line"><span class="comment"># 如果不是所有程序都需要,也可仅执行如下命令</span></span><br><span class="line">yum install java-1.8.0-openjdk java-1.8.0-openjdk-devel</span><br><span class="line">java -version  <span class="comment"># 查看jdk版本号</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3 配置环境变量"></a>3 配置环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile <span class="comment"># 编辑该文件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># set java environment  </span><br><span class="line">JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.144-0.b01.el7_4.x86_64</span><br><span class="line">PATH=$PATH:$JAVA_HOME/bin  </span><br><span class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar  </span><br><span class="line">export JAVA_HOME  CLASSPATH  PATH</span><br></pre></td></tr></table></figure>
+<p>退出并保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">. /etc/profile   <span class="comment"># 注意:那里是需要空格的</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span>  <span class="comment"># 查看</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$CLASSPATH</span>  <span class="comment"># 查看</span></span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -548,15 +549,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,7 +577,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
