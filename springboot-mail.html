@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://blog.caoyu.info">
   <title>springboot整合Mail服务 | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 导入mail包1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;gt; 2 application.yml配置123456">
+  <meta name="description" content="1 导入mail包1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;gt;  2 application.yml配置12345">
 <meta name="keywords" content="idea,spring,springboot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springboot整合Mail服务">
 <meta property="og:url" content="https://blog.caoyu.info/springboot-mail.html">
 <meta property="og:site_name" content="我还是个宝宝!">
-<meta property="og:description" content="1 导入mail包1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;gt; 2 application.yml配置123456">
+<meta property="og:description" content="1 导入mail包1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;gt;  2 application.yml配置12345">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2017/11/13/5a093b5554480.jpg">
 <meta property="og:image" content="https://i.loli.net/2017/11/13/5a093d7c436f4.png">
@@ -22,7 +22,7 @@
 <meta property="og:updated_time" content="2019-02-12T11:54:45.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot整合Mail服务">
-<meta name="twitter:description" content="1 导入mail包1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;gt; 2 application.yml配置123456">
+<meta name="twitter:description" content="1 导入mail包1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;gt;  2 application.yml配置12345">
 <meta name="twitter:image" content="https://i.loli.net/2017/11/13/5a093b5554480.jpg">
   
     <link rel="alternative" href="/atom.xml" title="我还是个宝宝!" type="application/atom+xml">
@@ -206,10 +206,13 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="1-导入mail包"><a href="#1-导入mail包" class="headerlink" title="1 导入mail包"></a>1 导入mail包</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="2-application-yml配置"><a href="#2-application-yml配置" class="headerlink" title="2 application.yml配置"></a>2 application.yml配置</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">    mail:</span></span><br><span class="line"><span class="attr">        protocol:</span> <span class="string">smtp</span> <span class="comment">#smtp是邮件发送协议，pop3和imap是邮件接收协议。因为我们要发送邮件，因此是smtp</span></span><br><span class="line"><span class="attr">        host:</span> <span class="string">smtp.qq.com</span> <span class="comment">#邮件发送服务器的主机,这里采用qq邮箱服务器</span></span><br><span class="line"><span class="attr">        port:</span> <span class="number">587</span> <span class="comment">#这个端口是必须设置的,看到好多教程,都没有设置它</span></span><br><span class="line"><span class="attr">        username:</span> <span class="comment">#qq邮箱,</span></span><br><span class="line"><span class="attr">        password:</span> <span class="comment">#qq授权码</span></span><br><span class="line"><span class="attr">        properties:</span></span><br><span class="line"><span class="attr">            mail:</span></span><br><span class="line"><span class="attr">                smtp:</span></span><br><span class="line"><span class="attr">                    auth:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">                    starttls:</span></span><br><span class="line"><span class="attr">                        enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">                        required:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
 <a id="more"></a> 
 <p>端口配置信息,仅供参考<br><img src="https://i.loli.net/2017/11/13/5a093b5554480.jpg" alt="2017042614212226.jpg"></p>
 <h1 id="3-Tests"><a href="#3-Tests" class="headerlink" title="3 Tests"></a>3 Tests</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.mail.SimpleMailMessage;</span><br><span class="line"><span class="keyword">import</span> org.springframework.mail.javamail.JavaMailSender;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith</span>(SpringRunner.class)</span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BlogApplicationTests</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> JavaMailSender javaMailSender;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;spring.mail.username&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String sender;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        SimpleMailMessage message = <span class="keyword">new</span> SimpleMailMessage();</span><br><span class="line">        message.setFrom(sender);<span class="comment">//发送者.</span></span><br><span class="line">        message.setTo(<span class="string">"xxx@qq.com"</span>);<span class="comment">//接收者.</span></span><br><span class="line">        message.setSubject(<span class="string">"测试邮件（邮件主题）"</span>);<span class="comment">//邮件主题.</span></span><br><span class="line">        message.setText(<span class="string">"这是邮件内容"</span>);<span class="comment">//邮件内容.</span></span><br><span class="line">        javaMailSender.send(message);<span class="comment">//发送邮件</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h1 id="4-关于QQ授权码"><a href="#4-关于QQ授权码" class="headerlink" title="4 关于QQ授权码"></a>4 关于QQ授权码</h1><p><img src="https://i.loli.net/2017/11/13/5a093d7c436f4.png" alt="1.png"><br><img src="https://i.loli.net/2017/11/13/5a093d7c48466.png" alt="2.png"></p>
 
       
@@ -527,6 +530,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">classification</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">idea</a>
               </li>
              
@@ -535,15 +550,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,14 +583,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">classification</a>
               </li>
             
             <div class="clearfix"></div>
@@ -756,5 +759,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":76,"height":150},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":76,"height":150},"mobile":{"show":true},"log":false});</script></body>
 </html>

@@ -190,8 +190,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h1><pre><code>root下操作
-</code></pre><h2 id="1-安装zsh"><a href="#1-安装zsh" class="headerlink" title="1 安装zsh"></a>1 安装zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zsh</span><br></pre></td></tr></table></figure>
+        <h1 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h1><pre><code>root下操作</code></pre><h2 id="1-安装zsh"><a href="#1-安装zsh" class="headerlink" title="1 安装zsh"></a>1 安装zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zsh</span><br></pre></td></tr></table></figure>
+
 <h2 id="2-切换bash至zsh"><a href="#2-切换bash至zsh" class="headerlink" title="2 切换bash至zsh"></a>2 切换bash至zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/build-server-zsh.html#more">more >></a>
@@ -283,6 +283,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h1><h2 id="1-安装tomcat"><a href="#1-安装tomcat" class="headerlink" title="1 安装tomcat"></a>1 安装tomcat</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install tomcat</span><br></pre></td></tr></table></figure>
+
 <h2 id="2-安装管理包"><a href="#2-安装管理包" class="headerlink" title="2 安装管理包"></a>2 安装管理包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install tomcat-webapps tomcat-admin-webapps</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/build-server-tomcat.html#more">more >></a>
@@ -375,7 +376,8 @@ var _hmt = _hmt || [];
       
         <h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><p>如果命令显示无权限,请加sudo,或是进入root用户;</p>
 <p>若是目录无权限访问,请给相关用户设置相应的访问权限-rwx</p>
-<h2 id="1-查看是否存在jdk环境"><a href="#1-查看是否存在jdk环境" class="headerlink" title="1 查看是否存在jdk环境"></a>1 查看是否存在jdk环境</h2><p>(根据需求决定是否卸载已存在的环境)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum list installed |grep java</span><br><span class="line">yum -y remove java-1.8.0-openjdk*  <span class="comment"># 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="1-查看是否存在jdk环境"><a href="#1-查看是否存在jdk环境" class="headerlink" title="1 查看是否存在jdk环境"></a>1 查看是否存在jdk环境</h2><p>(根据需求决定是否卸载已存在的环境)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum list installed |grep java</span><br><span class="line">yum -y remove java-1.8.0-openjdk*  <span class="comment"># 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载</span></span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/build-server-java.html#more">more >></a>
         
@@ -466,7 +468,9 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h1><h2 id="1-下载mysql的repo源"><a href="#1-下载mysql的repo源" class="headerlink" title="1 下载mysql的repo源"></a>1 下载mysql的repo源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm</span><br></pre></td></tr></table></figure>
+
 <h2 id="2-安装mysql的rpm包"><a href="#2-安装mysql的rpm包" class="headerlink" title="2 安装mysql的rpm包"></a>2 安装mysql的rpm包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm</span><br></pre></td></tr></table></figure>
+
 <h2 id="3-安装mysql"><a href="#3-安装mysql" class="headerlink" title="3 安装mysql"></a>3 安装mysql</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install mysql-server</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/build-server-mysql.html#more">more >></a>
@@ -557,9 +561,16 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=30987703&auto=1&height=66"></iframe><br>下面就是留言区域啦</p>
-<hr>
-<p><img src="https://i.loli.net/2017/10/26/59f1d41d62d8d.jpg" alt="Pikachu.jpg"></p>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=30987703&auto=1&height=66"></iframe>
+下面就是留言区域啦
+***
+![Pikachu.jpg](https://i.loli.net/2017/10/26/59f1d41d62d8d.jpg)
+
+
+
+
+
+
 
       
 
@@ -710,6 +721,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">classification</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">idea</a>
               </li>
              
@@ -718,15 +741,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -755,14 +774,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">classification</a>
               </li>
             
             <div class="clearfix"></div>
@@ -939,5 +950,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":76,"height":150},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":76,"height":150},"mobile":{"show":true},"log":false});</script></body>
 </html>

@@ -202,22 +202,25 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="1-idea警告信息"><a href="#1-idea警告信息" class="headerlink" title="1 idea警告信息"></a>1 idea警告信息</h1><pre><code>Spring Team recommends: &quot;Always use constructor based dependency injection in your beans. Always use assertions for mandatory dependencies&quot;.
-Spring Team建议：“在你的bean中,使用基于构造函数的依赖注入;并且使用强制依赖关系的断言”。
-</code></pre><h1 id="2-被警告的代码"><a href="#2-被警告的代码" class="headerlink" title="2 被警告的代码"></a>2 被警告的代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+Spring Team建议：“在你的bean中,使用基于构造函数的依赖注入;并且使用强制依赖关系的断言”。</code></pre><h1 id="2-被警告的代码"><a href="#2-被警告的代码" class="headerlink" title="2 被警告的代码"></a>2 被警告的代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 <h1 id="3-Spring-Team推荐的写法"><a href="#3-Spring-Team推荐的写法" class="headerlink" title="3 Spring Team推荐的写法"></a>3 Spring Team推荐的写法</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">UserController</span><span class="params">(UserService userService)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.userService = userService;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <pre><code>Spring Team推荐使用构造器注入,我猜测是java变量初始化顺序的原因
-Java变量的初始化顺序为：静态变量或静态代码块–&gt;实例变量或初始化代码块–&gt;构造方法 - &gt;@Autowired
-</code></pre><h1 id="4-或者使用-Resource"><a href="#4-或者使用-Resource" class="headerlink" title="4 或者使用@Resource"></a>4 或者使用@Resource</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+Java变量的初始化顺序为：静态变量或静态代码块–&gt;实例变量或初始化代码块–&gt;构造方法 - &gt;@Autowired</code></pre><h1 id="4-或者使用-Resource"><a href="#4-或者使用-Resource" class="headerlink" title="4 或者使用@Resource"></a>4 或者使用@Resource</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+
 <h1 id="5-简析-Resource和-Autowired"><a href="#5-简析-Resource和-Autowired" class="headerlink" title="5 简析@Resource和@Autowired"></a>5 简析@Resource和@Autowired</h1><h2 id="5-1-Resource"><a href="#5-1-Resource" class="headerlink" title="5.1 @Resource"></a>5.1 @Resource</h2><pre><code>默认按照byName自动注入,由J2EE提供,需要导入javax.annotation.Resource
 它有两个重要的属性name和type,而Spring将@Resource注解的name属性解析为bean的名字,而type属性则解析为bean的类型
 所以,如果使用name属性,则使用byName的自动注入策略,而使用type属性时则使用byType自动注入策略
-如果name和type属性都未指定,则默认byName注入,byName未找到时,会继续采用byType注入
-</code></pre><h2 id="5-2-Autowired"><a href="#5-2-Autowired" class="headerlink" title="5.2 @Autowired"></a>5.2 @Autowired</h2><pre><code>采用byType自动注入,由Spring提供,需要导入org.springframework.beans.factory.annotation.Autowired
+如果name和type属性都未指定,则默认byName注入,byName未找到时,会继续采用byType注入</code></pre><h2 id="5-2-Autowired"><a href="#5-2-Autowired" class="headerlink" title="5.2 @Autowired"></a>5.2 @Autowired</h2><pre><code>采用byType自动注入,由Spring提供,需要导入org.springframework.beans.factory.annotation.Autowired
 默认情况要求对象必须存在,如果需要为null,可以设置它的required=true
 如果接口存在多个实现类,我们依然可以byName自动注入:通过与@Qualifier搭配使用
-即先byType,byType匹配到多个时,再通过byName
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="meta">@Qualifier</span>(<span class="string">"userServiceForXXX"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+即先byType,byType匹配到多个时,再通过byName</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="meta">@Qualifier</span>(<span class="string">"userServiceForXXX"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+
+
+
+
 
       
 
@@ -530,6 +533,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">classification</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">idea</a>
               </li>
              
@@ -538,15 +553,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,14 +586,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">classification</a>
               </li>
             
             <div class="clearfix"></div>
@@ -759,5 +762,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":76,"height":150},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":76,"height":150},"mobile":{"show":true},"log":false});</script></body>
 </html>

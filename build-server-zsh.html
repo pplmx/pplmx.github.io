@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://blog.caoyu.info">
   <title>linux服务器初建之zsh安装 | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装zshroot下操作 1 安装zsh1yum -y install zsh 2 切换bash至zsh12chsh -s /bin/zshreboot">
+  <meta name="description" content="安装zshroot下操作1 安装zsh1yum -y install zsh  2 切换bash至zsh12chsh -s /bin/zshreboot">
 <meta name="keywords" content="zsh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux服务器初建之zsh安装">
 <meta property="og:url" content="https://blog.caoyu.info/build-server-zsh.html">
 <meta property="og:site_name" content="我还是个宝宝!">
-<meta property="og:description" content="安装zshroot下操作 1 安装zsh1yum -y install zsh 2 切换bash至zsh12chsh -s /bin/zshreboot">
+<meta property="og:description" content="安装zshroot下操作1 安装zsh1yum -y install zsh  2 切换bash至zsh12chsh -s /bin/zshreboot">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-12-14T02:45:33.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux服务器初建之zsh安装">
-<meta name="twitter:description" content="安装zshroot下操作 1 安装zsh1yum -y install zsh 2 切换bash至zsh12chsh -s /bin/zshreboot">
+<meta name="twitter:description" content="安装zshroot下操作1 安装zsh1yum -y install zsh  2 切换bash至zsh12chsh -s /bin/zshreboot">
   
     <link rel="alternative" href="/atom.xml" title="我还是个宝宝!" type="application/atom+xml">
   
@@ -201,16 +201,18 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h1><pre><code>root下操作
-</code></pre><h2 id="1-安装zsh"><a href="#1-安装zsh" class="headerlink" title="1 安装zsh"></a>1 安装zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zsh</span><br></pre></td></tr></table></figure>
+        <h1 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h1><pre><code>root下操作</code></pre><h2 id="1-安装zsh"><a href="#1-安装zsh" class="headerlink" title="1 安装zsh"></a>1 安装zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zsh</span><br></pre></td></tr></table></figure>
+
 <h2 id="2-切换bash至zsh"><a href="#2-切换bash至zsh" class="headerlink" title="2 切换bash至zsh"></a>2 切换bash至zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 <h2 id="3-安装oh-my-zsh"><a href="#3-安装oh-my-zsh" class="headerlink" title="3 安装oh-my-zsh"></a>3 安装oh-my-zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install git</span><br><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">         __                                     __   </span><br><span class="line">  ____  / /_     ____ ___  __  __   ____  _____/ /_  </span><br><span class="line"> / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \ </span><br><span class="line">/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / / </span><br><span class="line">\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/  </span><br><span class="line">                        /____/                       ....is now installed!</span><br><span class="line">Please look over the ~/.zshrc file to select plugins, themes, and options.</span><br><span class="line"></span><br><span class="line">p.s. Follow us at https://twitter.com/ohmyzsh.</span><br><span class="line"></span><br><span class="line">p.p.s. Get stickers and t-shirts at http://shop.planetargon.com.</span><br></pre></td></tr></table></figure>
+
 <h2 id="4-安装成功"><a href="#4-安装成功" class="headerlink" title="4 安装成功"></a>4 安装成功</h2><pre><code>出现如上图案,表示修改成功了
 如果你需要继续修改zsh的主题,或是添加插件
-可以在~/.zshrc文件中修改
-</code></pre>
+可以在~/.zshrc文件中修改</code></pre>
       
 
       
@@ -518,6 +520,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">classification</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">idea</a>
               </li>
              
@@ -526,15 +540,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,14 +573,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">classification</a>
               </li>
             
             <div class="clearfix"></div>
@@ -747,5 +749,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":76,"height":150},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":76,"height":150},"mobile":{"show":true},"log":false});</script></body>
 </html>

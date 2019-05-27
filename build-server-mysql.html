@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://blog.caoyu.info">
   <title>linux服务器初建之mysql安装 | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装mysql1 下载mysql的repo源1$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm 2 安装mysql的rpm包1$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm 3 安装mysql1$ sudo yum inst">
+  <meta name="description" content="安装mysql1 下载mysql的repo源1$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm  2 安装mysql的rpm包1$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm  3 安装mysql1$ sudo yum in">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux服务器初建之mysql安装">
 <meta property="og:url" content="https://blog.caoyu.info/build-server-mysql.html">
 <meta property="og:site_name" content="我还是个宝宝!">
-<meta property="og:description" content="安装mysql1 下载mysql的repo源1$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm 2 安装mysql的rpm包1$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm 3 安装mysql1$ sudo yum inst">
+<meta property="og:description" content="安装mysql1 下载mysql的repo源1$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm  2 安装mysql的rpm包1$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm  3 安装mysql1$ sudo yum in">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-12-14T02:45:33.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux服务器初建之mysql安装">
-<meta name="twitter:description" content="安装mysql1 下载mysql的repo源1$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm 2 安装mysql的rpm包1$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm 3 安装mysql1$ sudo yum inst">
+<meta name="twitter:description" content="安装mysql1 下载mysql的repo源1$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm  2 安装mysql的rpm包1$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm  3 安装mysql1$ sudo yum in">
   
     <link rel="alternative" href="/atom.xml" title="我还是个宝宝!" type="application/atom+xml">
   
@@ -202,17 +202,30 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h1><h2 id="1-下载mysql的repo源"><a href="#1-下载mysql的repo源" class="headerlink" title="1 下载mysql的repo源"></a>1 下载mysql的repo源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm</span><br></pre></td></tr></table></figure>
+
 <h2 id="2-安装mysql的rpm包"><a href="#2-安装mysql的rpm包" class="headerlink" title="2 安装mysql的rpm包"></a>2 安装mysql的rpm包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm</span><br></pre></td></tr></table></figure>
+
 <h2 id="3-安装mysql"><a href="#3-安装mysql" class="headerlink" title="3 安装mysql"></a>3 安装mysql</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install mysql-server</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 <h2 id="4-重置mysql密码"><a href="#4-重置mysql密码" class="headerlink" title="4 重置mysql密码"></a>4 重置mysql密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root</span><br></pre></td></tr></table></figure>
-<p>登录时有可能报这样的错：ERROR 2002 (HY000): Can‘t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock‘<br>原因是/var/lib/mysql的访问权限问题。下面的命令把/var/lib/mysql的拥有者改为当前用户：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chown -R root:root /var/lib/mysql</span><br></pre></td></tr></table></figure></p>
-<p>重启mysql服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service mysqld restart</span><br></pre></td></tr></table></figure></p>
+
+<p>登录时有可能报这样的错：ERROR 2002 (HY000): Can‘t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock‘<br>原因是/var/lib/mysql的访问权限问题。下面的命令把/var/lib/mysql的拥有者改为当前用户：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chown -R root:root /var/lib/mysql</span><br></pre></td></tr></table></figure>
+
+<p>重启mysql服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service mysqld restart</span><br></pre></td></tr></table></figure>
+
 <p>接下来是登录mysql(有两种情况)</p>
 <h3 id="4-1-直接登录成功"><a href="#4-1-直接登录成功" class="headerlink" title="4.1 直接登录成功"></a>4.1 直接登录成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root  //直接回车进入mysql控制台</span><br><span class="line">mysql &gt; use mysql;</span><br><span class="line">mysql &gt; update user <span class="built_in">set</span> password=password(<span class="string">'123456'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span>;</span><br><span class="line">mysql &gt; <span class="built_in">exit</span>;</span><br></pre></td></tr></table></figure>
+
 <h3 id="4-2-登录失败"><a href="#4-2-登录失败" class="headerlink" title="4.2 登录失败"></a>4.2 登录失败</h3><p>登录失败:是因为密码错误,不是默认的空密码,<br>而是在安装时,mysql默认分配了随机密码<br>如果你的安装信息是详细显示的,那么你是可以在之前的安装信息中,找到随机密码<br>找不到,那就继续如下操作:</p>
-<p>1.修改MySQL的登录设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vi /etc/my.cnf // 在[mysqld]的段中加上一句：skip-grant-tables</span></span><br></pre></td></tr></table></figure></p>
-<p>2.重新启动mysql,并登录(mysql5.7,password字段不存在了,而是authentication_string)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># service mysqld restart</span></span><br><span class="line"><span class="comment"># mysql -uroot -p//回车</span></span><br><span class="line">mysql&gt; use mysql;</span><br><span class="line">mysql&gt; update mysql.user <span class="built_in">set</span> authentication_string=password(<span class="string">'123456'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span> and Host = <span class="string">'localhost'</span>;</span><br><span class="line">mysql&gt; flush privileges;</span><br><span class="line">mysql&gt; quit;</span><br></pre></td></tr></table></figure></p>
+<p>1.修改MySQL的登录设置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vi /etc/my.cnf // 在[mysqld]的段中加上一句：skip-grant-tables</span></span><br></pre></td></tr></table></figure>
+
+<p>2.重新启动mysql,并登录(mysql5.7,password字段不存在了,而是authentication_string)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># service mysqld restart</span></span><br><span class="line"><span class="comment"># mysql -uroot -p//回车</span></span><br><span class="line">mysql&gt; use mysql;</span><br><span class="line">mysql&gt; update mysql.user <span class="built_in">set</span> authentication_string=password(<span class="string">'123456'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span> and Host = <span class="string">'localhost'</span>;</span><br><span class="line">mysql&gt; flush privileges;</span><br><span class="line">mysql&gt; quit;</span><br></pre></td></tr></table></figure>
+
 <p>3.还原/etc/my.cnf(将skip-grant-tables删除)</p>
 <p>4.重启mysql,即可使用新密码登录了</p>
 
@@ -523,6 +536,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">classification</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">idea</a>
               </li>
              
@@ -531,15 +556,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,14 +589,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">classification</a>
               </li>
             
             <div class="clearfix"></div>
@@ -752,5 +765,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":76,"height":150},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":76,"height":150},"mobile":{"show":true},"log":false});</script></body>
 </html>

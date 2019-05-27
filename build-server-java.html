@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://blog.caoyu.info">
   <title>linux服务器初建之java环境 | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境)12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
+  <meta name="description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境) 12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux服务器初建之java环境">
 <meta property="og:url" content="https://blog.caoyu.info/build-server-java.html">
 <meta property="og:site_name" content="我还是个宝宝!">
-<meta property="og:description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境)12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
+<meta property="og:description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境) 12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-12-14T02:45:33.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux服务器初建之java环境">
-<meta name="twitter:description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境)12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
+<meta name="twitter:description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境) 12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
   
     <link rel="alternative" href="/atom.xml" title="我还是个宝宝!" type="application/atom+xml">
   
@@ -203,12 +203,19 @@ var _hmt = _hmt || [];
       
         <h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><p>如果命令显示无权限,请加sudo,或是进入root用户;</p>
 <p>若是目录无权限访问,请给相关用户设置相应的访问权限-rwx</p>
-<h2 id="1-查看是否存在jdk环境"><a href="#1-查看是否存在jdk环境" class="headerlink" title="1 查看是否存在jdk环境"></a>1 查看是否存在jdk环境</h2><p>(根据需求决定是否卸载已存在的环境)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum list installed |grep java</span><br><span class="line">yum -y remove java-1.8.0-openjdk*  <span class="comment"># 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="1-查看是否存在jdk环境"><a href="#1-查看是否存在jdk环境" class="headerlink" title="1 查看是否存在jdk环境"></a>1 查看是否存在jdk环境</h2><p>(根据需求决定是否卸载已存在的环境)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum list installed |grep java</span><br><span class="line">yum -y remove java-1.8.0-openjdk*  <span class="comment"># 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载</span></span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 <h2 id="2-安装jdk"><a href="#2-安装jdk" class="headerlink" title="2 安装jdk"></a>2 安装jdk</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum -y list java*  <span class="comment"># 查看jdk软件包列表</span></span><br><span class="line">yum install java-1.8.0-openjdk*  <span class="comment"># 安装所有java程序</span></span><br><span class="line"><span class="comment"># 如果不是所有程序都需要,也可仅执行如下命令</span></span><br><span class="line">yum install java-1.8.0-openjdk java-1.8.0-openjdk-devel</span><br><span class="line">java -version  <span class="comment"># 查看jdk版本号</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3 配置环境变量"></a>3 配置环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile <span class="comment"># 编辑该文件</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># set java environment  </span><br><span class="line">JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.144-0.b01.el7_4.x86_64</span><br><span class="line">PATH=$PATH:$JAVA_HOME/bin  </span><br><span class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar  </span><br><span class="line">export JAVA_HOME  CLASSPATH  PATH</span><br></pre></td></tr></table></figure>
-<p>退出并保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">. /etc/profile   <span class="comment"># 注意:那里是需要空格的</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span>  <span class="comment"># 查看</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$CLASSPATH</span>  <span class="comment"># 查看</span></span><br></pre></td></tr></table></figure></p>
+
+<p>退出并保存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">. /etc/profile   <span class="comment"># 注意:那里是需要空格的</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span>  <span class="comment"># 查看</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$CLASSPATH</span>  <span class="comment"># 查看</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -517,6 +524,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">classification</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">idea</a>
               </li>
              
@@ -525,15 +544,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,14 +577,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">classification</a>
               </li>
             
             <div class="clearfix"></div>
@@ -746,5 +753,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":76,"height":150},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":76,"height":150},"mobile":{"show":true},"log":false});</script></body>
 </html>
