@@ -1,0 +1,6 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://blog.yoooo.fun/sitemap.xml
+Sitemap: https://blog.yoooo.fun/baidusitemap.xml
