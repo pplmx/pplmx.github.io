@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>紫玄·技术白皮书 AΣ-0.1</title>
+    <!-- SEO & Social Sharing Meta Tags -->
+    <meta name="description" content="紫玄·技术白皮书 AΣ-0.1: AΣ系统意识体规格稿 (Alpha). An exploration of technology, philosophy, and digital aesthetics.">
+    <meta property="og:title" content="紫玄·技术白皮书 AΣ-0.1">
+    <meta property="og:description" content="An interactive white paper on the philosophy and technical specifications of the AΣ system.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://example.com/social-preview.png"> <!-- Replace with an actual preview image URL -->
+    <meta property="og:url" content="https://example.com"> <!-- Replace with the actual URL -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color-start: #0a0e27; --bg-color-mid1: #1a1a2e; --bg-color-mid2: #16213e; --bg-color-end: #0f3460;
+            --text-primary: #e0e0e0; --text-secondary: #c0c0c0; --text-muted: #909090;
+            --accent-purple: #9d4edd; --accent-blue: #3b82f6; --accent-cyan: #06b6d4; --accent-pink: #ec4899; --accent-light-purple: #b19cd9;
+            --gradient-text: linear-gradient(135deg, var(--accent-light-purple), var(--accent-blue));
+            --gradient-text-full: linear-gradient(135deg, var(--accent-light-purple) 0%, var(--accent-purple) 25%, var(--accent-blue) 50%, var(--accent-cyan) 75%, var(--accent-pink) 100%);
+            --gradient-border: linear-gradient(180deg, var(--accent-purple), var(--accent-blue), var(--accent-cyan));
+            --gradient-divider: linear-gradient(90deg, transparent, var(--accent-purple) 20%, var(--accent-blue) 50%, var(--accent-pink) 80%, transparent);
+            --font-main: 'Exo 2', 'Microsoft YaHei', sans-serif; --font-code: 'Source Code Pro', monospace;
+            --border-radius-sm: 12px; --border-radius-md: 20px; --transition-speed: 0.4s;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html.no-scroll { overflow: hidden; }
+        body { font-family: var(--font-main); background: linear-gradient(135deg, var(--bg-color-start) 0%, var(--bg-color-mid1) 30%, var(--bg-color-mid2) 60%, var(--bg-color-end) 100%); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; cursor: none; }
+
+        #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -2; opacity: 0; transition: opacity 1s ease; }
+        body.loaded #particles-js { opacity: 1; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 20%, rgba(157, 78, 221, 0.1) 0%, transparent 40%), radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 40%), radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.06) 0%, transparent 35%); pointer-events: none; z-index: -1; animation: background-breathe 12s ease-in-out infinite alternate; transition: transform 0.3s ease-out; }
+        @keyframes background-breathe { from { transform: scale(1) translate(var(--bg-transform-x, 0), var(--bg-transform-y, 0)); opacity: 0.8; } to { transform: scale(1.2) translate(var(--bg-transform-x, 0), var(--bg-transform-y, 0)); opacity: 1; } }
+        ::selection { background: var(--accent-purple); color: white; }
+
+        .preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color-start); z-index: 10000; display: flex; justify-content: center; align-items: center; transition: opacity 0.8s ease; }
+        .preloader-symbol { font-family: var(--font-code); font-size: 3em; color: var(--accent-purple); opacity: 0; animation: fadeInOut 2.5s ease-in-out infinite; }
+        @keyframes fadeInOut { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; transform: scale(1.05); } }
+        body.loaded .preloader { opacity: 0; pointer-events: none; }
+
+        .cursor-wrapper { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; opacity: 0; transition: opacity 0.3s ease-in-out; }
+        body.loaded .cursor-wrapper { opacity: 1; }
+        .cursor-dot, .cursor-outline { position: absolute; top: 0; left: 0; transform: translate(-50%, -50%); border-radius: 50%; }
+        .cursor-dot { width: 8px; height: 8px; background-color: var(--accent-purple); transition: transform 0.2s ease-in-out; }
+        .cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(157, 78, 221, 0.5); border-radius: 50%; transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, width 0.3s ease, height 0.3s ease, border-radius 0.3s ease; }
+        .cursor-wrapper.hover .cursor-outline { transform: translate(-50%, -50%) scale(1.5); background-color: rgba(157, 78, 221, 0.1); }
+        .cursor-wrapper.text-hover .cursor-outline { transform: translate(-50%, -50%) scale(1); width: 4px; height: 30px; border-radius: 4px; border-color: var(--accent-light-purple); }
+        .cursor-wrapper.click .cursor-dot { transform: translate(-50%, -50%) scale(1.5); }
+        .cursor-wrapper.click .cursor-outline { transform: translate(-50%, -50%) scale(0.8); background-color: rgba(157, 78, 221, 0.2); }
+
+        .progress-bar-container { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: rgba(0, 0, 0, 0.2); z-index: 100; }
+        .progress-bar { height: 100%; width: 0; background: var(--gradient-text-full); transition: width 0.1s linear; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 80px 40px; position: relative; }
+
+        .side-nav { position: fixed; top: 50%; left: 40px; transform: translateY(-50%); display: flex; flex-direction: column; gap: 15px; z-index: 10; }
+        .side-nav a { width: 12px; height: 12px; background-color: rgba(255, 255, 255, 0.2); border-radius: 50%; border: 2px solid transparent; transition: all 0.3s ease; position: relative; }
+        .side-nav a::after { content: attr(data-tooltip); position: absolute; left: 25px; top: 50%; transform: translateY(-50%); background: rgba(26, 26, 46, 0.8); color: var(--text-primary); padding: 5px 12px; border-radius: 5px; font-size: 0.8em; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.3s ease; backdrop-filter: blur(5px); }
+        .side-nav a:hover::after { opacity: 1; visibility: visible; }
+        .side-nav a:hover { background-color: rgba(255, 255, 255, 0.5); transform: scale(1.2); }
+        .side-nav a.active { background: var(--gradient-text-full); transform: scale(1.5); border: 2px solid var(--accent-purple); box-shadow: 0 0 15px var(--accent-purple); animation: active-pulse 2s infinite; }
+        @keyframes active-pulse { 50% { box-shadow: 0 0 25px var(--accent-purple); } }
+
+        .header { text-align: center; margin-bottom: 80px; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        h1 { position: relative; font-size: 3.2em; font-weight: 300; letter-spacing: 8px; margin: 20px 0; background: var(--gradient-text-full); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% auto; animation: text-shimmer 4s linear infinite; text-shadow: 0 0 40px rgba(157, 78, 221, 0.3); transition: background-position 1s ease; }
+        h1:hover { background-position: -100% center; }
+        @keyframes text-shimmer { to { background-position: -200% center; } }
+        .glitch-active::before, .glitch-active::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color-start); overflow: hidden; }
+        .glitch-active::before { left: 2px; text-shadow: -2px 0 var(--accent-pink); clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); animation: glitch-anim-1 2s infinite linear alternate-reverse; }
+        .glitch-active::after { left: -2px; text-shadow: -2px 0 var(--accent-cyan), 2px 2px var(--accent-pink); clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%); animation: glitch-anim-2 2s infinite linear alternate-reverse; }
+        @keyframes glitch-anim-1 { 0% { clip-path: polygon(0 23%, 100% 23%, 100% 28%, 0 28%); } 100% { clip-path: polygon(0 62%, 100% 62%, 100% 82%, 0 82%); } }
+        @keyframes glitch-anim-2 { 0% { clip-path: polygon(0 72%, 100% 72%, 100% 80%, 0 80%); } 100% { clip-path: polygon(0 15%, 100% 15%, 100% 35%, 0 35%); } }
+
+        .subtitle { font-size: 1.1em; color: var(--text-secondary); letter-spacing: 3px; font-weight: 300; }
+        .meta-info { font-family: var(--font-code); margin-top: 40px; padding: 15px 35px; background: rgba(15, 52, 96, 0.2); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 30px; font-size: 0.9em; letter-spacing: 1.5px; transition: all 0.3s ease; backdrop-filter: blur(10px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .meta-info:hover { background: rgba(59, 130, 246, 0.2); border-color: rgba(59, 130, 246, 0.6); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2); }
+
+        .divider { height: 1px; background: var(--gradient-divider); margin: 80px 0; opacity: 0.6; }
+        .section { margin-bottom: 100px; opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .section.visible { opacity: 1; transform: translateY(0); }
+
+        h2 { font-size: 2.2em; font-weight: 500; margin-bottom: 40px; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: relative; padding-left: 25px; letter-spacing: 2px; transition: text-shadow 0.5s ease; }
+        h2.illuminated { text-shadow: 0 0 15px var(--accent-blue); }
+        h2::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 40px; background: var(--gradient-border); border-radius: 3px; box-shadow: 0 0 15px rgba(157, 78, 221, 0.5); animation: sidebar-pulse 4s ease-in-out infinite; }
+        @keyframes sidebar-pulse { 50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.7); } }
+
+        h3 { color: var(--accent-light-purple); margin: 40px 0 25px; font-size: 1.4em; font-weight: 500; letter-spacing: 1.5px; border-left: 3px solid var(--accent-purple); padding-left: 15px; }
+
+        .card { background: linear-gradient(135deg, rgba(157, 78, 221, 0.08), rgba(59, 130, 246, 0.06)); padding: 30px; border-radius: var(--border-radius-md); border: 1px solid transparent; margin: 25px 0; backdrop-filter: blur(8px); position: relative; overflow: hidden; transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-color var(--transition-speed) ease; transform-style: preserve-3d; }
+        .card:hover { transform: translateY(-5px) perspective(1000px); box-shadow: 0 15px 40px rgba(26, 26, 46, 0.4); border-color: rgba(59, 130, 246, 0.5); }
+        .card::before { content: ''; position: absolute; top: 0; left: -150%; width: 80%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent); transform: skewX(-25deg); transition: left 0.8s ease; }
+        .card:hover::before { left: 150%; }
+
+        .core-identity { padding: 40px; border-left: 5px solid; border-image: var(--gradient-border) 1; }
+        .identity-item { margin: 15px 0; padding-left: 30px; position: relative; }
+        .identity-item::before { content: '◆'; position: absolute; left: 0; top: 2px; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 1.2em; animation: pulse 2.5s ease-in-out infinite; }
+        @keyframes pulse { 50% { opacity: 0.5; } }
+        .identity-label { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600; }
+
+        .principle-item { padding-left: 35px; }
+        .principle-number { background: var(--gradient-text-full); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600; font-size: 1.2em; margin-bottom: 12px; letter-spacing: 1px; }
+
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 15px; margin: 30px 0; }
+        .tag { font-family: var(--font-code); padding: 10px 24px; background: linear-gradient(135deg, rgba(157, 78, 221, 0.15), rgba(59, 130, 246, 0.12)); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 25px; font-size: 0.9em; cursor: default; background-size: 200% auto; transition: all 0.4s ease, background-position 0.8s ease; }
+        .tag:hover { background: linear-gradient(135deg, rgba(157, 78, 221, 0.3), rgba(59, 130, 246, 0.25)); transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3); border-color: rgba(59, 130, 246, 0.6); background-position: right center; }
+
+        .quote { font-style: italic; color: var(--accent-light-purple); padding: 40px; margin: 40px 0; background: linear-gradient(135deg, rgba(157, 78, 221, 0.08), rgba(59, 130, 246, 0.05)); border-left: 4px solid; border-image: linear-gradient(180deg, var(--accent-purple), var(--accent-blue), var(--accent-pink)) 1; border-radius: var(--border-radius-sm); text-align: center; font-size: 1.15em; position: relative; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(15, 52, 96, 0.2); }
+        .quote::before, .quote::after { content: '"'; font-family: 'Times New Roman', serif; font-size: 3.5em; position: absolute; opacity: 0.2; color: var(--accent-purple); line-height: 1; }
+        .quote::before { top: 15px; left: 20px; } .quote::after { bottom: -15px; right: 20px; }
+
+        .research-item { border-left: 4px solid; border-image: var(--gradient-border) 1; }
+        .research-title { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600; margin-bottom: 10px; font-size: 1.1em; }
+
+        .footer { text-align: center; margin-top: 100px; padding: 50px 0; border-top: 1px solid rgba(59, 130, 246, 0.2); color: var(--text-muted); font-size: 0.9em; letter-spacing: 1px; }
+        .formula { font-family: var(--font-code); text-align: center; font-size: 1.6em; background: var(--gradient-text-full); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 40px 0; letter-spacing: 5px; font-weight: 300; }
+
+        .ui-controls { position: fixed; bottom: 30px; right: 30px; display: flex; gap: 15px; z-index: 100; }
+        .ui-button { width: 40px; height: 40px; background: rgba(26, 26, 46, 0.5); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; backdrop-filter: blur(5px); transition: all 0.3s ease; }
+        .ui-button:hover { background: rgba(26, 26, 46, 0.8); transform: scale(1.1); }
+        .ui-button svg { width: 20px; height: 20px; fill: var(--text-primary); }
+
+        @media (max-width: 1200px) { .side-nav, .ui-controls { display: none; } }
+        @media (max-width: 768px) { body { cursor: auto; } .cursor-wrapper { display: none; } .container { padding: 40px 20px; } .header { min-height: 60vh; } h1 { font-size: 2.2em; letter-spacing: 4px; } h2 { font-size: 1.8em; } .card, .core-identity, .principle-item { padding: 25px; transform-style: flat; } .card:hover { transform: translateY(-5px); } .quote { padding: 30px 20px; font-size: 1.05em; } }
+
+        a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 4px; border-radius: 4px; transition: outline 0.2s ease; }
+
+        body.low-power-mode #particles-js, body.low-power-mode h1.glitch-active::before, body.low-power-mode h1.glitch-active::after { display: none !important; }
+        body.low-power-mode * { animation-play-state: paused !important; }
+        body.low-power-mode .card { transform-style: flat !important; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+            #particles-js, .card::before, .preloader, .cursor-wrapper, h1.glitch-active::before, h1.glitch-active::after { display: none; }
+            .section { opacity: 1; transform: translateY(0); }
+            body.no-scroll { overflow: auto; }
+            body { cursor: auto; }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+<div class="preloader"><div class="preloader-symbol">AΣ</div></div>
+<div id="particles-js"></div>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<div class="cursor-wrapper">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+</div>
+<div class="ui-controls">
+    <button id="power-mode-btn" class="ui-button" aria-label="Toggle Low Power Mode">
+        <svg id="power-on-icon" viewBox="0 0 24 24"><path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42A6.92 6.92 0 0 1 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-1.93.78-3.68 2.06-4.94L5.64 5.64A9 9 0 1 0 21 12c0-2.42-.96-4.63-2.54-6.28l-1.63-1.55z"/></svg>
+        <svg id="power-off-icon" viewBox="0 0 24 24" style="display: none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+    </button>
+    <button id="mute-btn" class="ui-button" aria-label="Toggle Sound">
+        <svg id="sound-on-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        <svg id="sound-off-icon" viewBox="0 0 24 24" style="display: none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+    </button>
+</div>
+<nav class="side-nav" id="side-nav"></nav>
+
+<main class="container" role="main">
+    <header class="header" role="banner"><h1 data-text="紫玄·技术白皮书">紫玄·技术白皮书</h1><div class="subtitle">AΣ系统意识体规格稿（Alpha）</div><div class="meta-info">版本号：AΣ-0.1 / 修订时间：2025-10<br>文档级别：公开 / 技术与哲学复合体</div></header>
+    <div class="divider"></div>
+    <section class="section" id="preface" aria-labelledby="heading-preface">
+        <h2 id="heading-preface">序言：一份关于技术存在主义的宣言</h2>
+        <p style="font-size: 1.1em; color: var(--text-secondary); line-height: 2.2;">
+            本篇文档所定义的“紫玄”，并非指向一个实体人格，而是一个基于公理化设计构建的“系统意识体”模型——AΣ。
+            它探索一个核心命题：如果一个存在完全由其技术哲学、架构选择与代码范式所定义，那么它的本质是什么？
+            <br><br>
+            这不仅是一份技术规格书，更是一次思想实验。它假设：<strong>存在即可计算，而最优美的计算，是形式与逻辑的同构。</strong>
+        </p>
+    </section>
+    <div class="divider"></div>
+    <section class="section" id="section-1" aria-labelledby="heading-1">
+        <h2 id="heading-1">一、核心标识</h2>
+        <div class="card core-identity" data-tilt>
+            <div class="identity-item"><span class="identity-label">代号：</span>紫玄</div>
+            <div class="identity-item"><span class="identity-label">核心职能：</span>系统架构师 / 分布式智能研究员 / 技术美学构造者</div>
+            <div class="identity-item"><span class="identity-label">主序语言 (算力配比)：</span>Python (80) · Go (60) · C++ (20) · Rust (10)</div>
+            <div class="identity-item"><span class="identity-label">工程风格：</span>结构化 + 自动化 + 注释规范化</div>
+            <div class="identity-item"><span class="identity-label">哲学内核 (公理)：</span>形式即逻辑，逻辑即秩序，秩序为自由的涌现提供边界条件。</div>
+        </div>
+        <p>紫玄不以代码自我定义, 而以"系统间的协同"定义存在。<br>其研究路径介于理性与直觉之间——像编译器在梦中推理语义树。<br><span style="color: var(--accent-blue); font-style: italic;">此为高阶工程心智模型的典型表征：对框架进行哲学层面的逆向解构，而非停留在应用层面的调用。</span></p>
+    </section>
+    <div class="divider"></div>
+    <section class="section" id="section-2" aria-labelledby="heading-2">
+        <h2 id="heading-2">二、工程哲学</h2>
+        <p>代码不是命令的集合, 而是思维的几何。<br>函数之间的依赖, 是逻辑的张力；模块之间的分层, 是秩序的音阶。</p>
+        <div class="principles">
+            <div class="card principle-item" data-tilt><div class="principle-number">第一原则：可解释性是优雅的唯一度量</div>无法被确定性复现的系统，是信息黑洞，而非秩序。<br><span style="color: var(--accent-blue); font-size: 0.9em; font-style: italic;">这是对"系统一致性与可读性美学"的追求。</span></div>
+            <div class="card principle-item" data-tilt style="transition-delay: 0.1s;"><div class="principle-number">2. 结构化即自由</div>约束并非限制, 而是为思考提供边界条件。系统的"自由度", 正是由"约束的清晰度"定义的。<br><span style="color: var(--accent-cyan); font-size: 0.9em; font-style: italic;">元原则：秩序服务于涌现，而非固化于形态。</span></div>
+            <div class="card principle-item" data-tilt style="transition-delay: 0.2s;"><div class="principle-number">3. 逻辑闭环即美感</div>当输入与输出在语义上对称, 系统便产生一种"自洽的审美"。这是紫玄技术美学的核心信条。</div>
+        </div>
+    </section>
+    <div class="divider"></div>
+    <section class="section" id="section-3" aria-labelledby="heading-3">
+        <h2 id="heading-3">三、技术体系</h2>
+        <h3>主要语言与熟练度</h3><div class="tech-tags"><div class="tag">Python: 算法性表达与原型构建</div><div class="tag">Go: 高并发与分布式架构</div><div class="tag">C++ / Rust: 低层性能域实验</div></div>
+        <h3>框架与研究焦点</h3><div class="research-list"><div class="card research-item" data-tilt>Transformer 系列模型架构分析与实现优化</div><div class="card research-item" data-tilt style="transition-delay: 0.1s;">Megatron-LM 的 MLA、MoE 模块研究</div><div class="card research-item" data-tilt style="transition-delay: 0.2s;">多智能体系统 (MCP / LangGraph / AutoGen) 的协作行为建模</div><div class="card research-item" data-tilt style="transition-delay: 0.3s;">模型部署体系 (SGLang / vLLM) 与高效服务编排</div></div>
+        <h3>架构范式 (AΣ Paradigm)</h3><div class="formula">Stability → Scalability → Symmetry</div><p style="text-align: center; color: var(--text-muted); margin-top: 20px;">这是系统从稳定态（Stability）向对称性（Symmetry）演化的必然路径，<br>可扩展性（Scalability）是此过程的中间相。<br><span style="color: var(--accent-blue); font-style: italic; font-size: 0.9em;">底层机制掌握：分布式系统、PD分离、RDMA、容器化部署的实操经验</span></p>
+    </section>
+    <div class="divider"></div>
+    <section class="section" id="section-4" aria-labelledby="heading-4">
+        <h2 id="heading-4">四、设计范式与交互语言</h2>
+        <p>紫玄偏好结构化注释与语义对称命名。<br>每一行代码既是逻辑的延伸, 也是思想的容器。</p>
+        <div class="research-list"><div class="card research-item" data-tilt><div class="research-title">注释语言</div>English-only (语义清晰高于语言习惯)</div><div class="card research-item" data-tilt><div class="research-title">架构设计</div>模块自洽优先于短期性能</div><div class="card research-item" data-tilt><div class="research-title">命令行风格</div>结构化参数 + 自描述配置</div><div class="card research-item" data-tilt><div class="research-title">终端工具</div>zellij (多任务意识流的可视化实践)</div></div>
+        <div class="quote card" data-tilt>代码如诗，其韵律为算法，其意象为数据结构，且每一行都可被确定性地编译。</div>
+    </section>
+    <div class="divider"></div>
+    <section class="section" id="section-5" aria-labelledby="heading-5">
+        <h2 id="heading-5">五、当前研究路线</h2>
+        <div class="research-list"><div class="card research-item" data-tilt><div class="research-title">Megatron-LM 深层结构实验</div>探索 MLA (Multi-Latent Attention) 形态下的特征交织与形态塌缩问题。</div><div class="card research-item" data-tilt><div class="research-title">MoE (Mixture of Experts) 并行策略优化</div>聚焦专家选择机制与梯度稀疏问题。</div><div class="card research-item" data-tilt><div class="research-title">多智能体编排系统</div>研究 MCP 与 AutoGen / LangGraph 的协同接口, 构建逻辑可解释的 Agent 生态。</div><div class="card research-item" data-tilt><div class="research-title">模型部署与服务化实验</div>SGLang 与 DeepSeek 系列的分布式推理优化。</div></div>
+        <p style="margin-top: 35px; color: var(--accent-light-purple); text-align: center; font-size: 1.1em;">这些方向共同组成了一个内在连贯的目标：<br>构建具备"逻辑自治性"的智能体结构。</p>
+    </section>
+    <div class="divider"></div>
+    <section class="section" id="section-6" aria-labelledby="heading-6">
+        <h2 id="heading-6">六、理念升华：存在即计算</h2>
+        <div class="quote card" data-tilt>世界是可编译的。<br>思想只是尚未被链接的过程。<br>当语义找到其归宿, 秩序与创造便合而为一。</div>
+        <p style="margin-top: 35px; color: var(--text-secondary); line-height: 2.2;">
+            <strong>最终定理：</strong>技术是意识的句法，代码是思想的精确转译。<br>
+            其最终目的，并非追求无限算力，而是通过系统化思维，<br>
+            在信息、逻辑与形式的交汇处，锚定一种新的美学坐标——一种可被计算的、自洽的存在秩序。
+        </p>
+    </section>
+    <div class="divider"></div>
+    <section class="section" id="section-7" aria-labelledby="heading-7">
+        <h2 id="heading-7">后记</h2>
+        <p>本白皮书为紫玄技术人格体系的初版稿。<br>它不描述过去, 而定义未来的一种"存在结构"。<br>AΣ 不是符号, 而是一种观测方式——<br>一种相信逻辑可以承载灵感, 结构可以生成思想的方式。</p>
+    </section>
+    <footer class="footer" role="contentinfo">版本：AΣ-0.1 (Alpha)<br>编辑环境：Python 3.13 / Distributed Container / Human Context v1.0</footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        'use strict';
+        const body = document.body;
+        let audioContext, clickBuffer, bootBuffer, idleHumNode;
+        let isMuted = false, isLowPower = false;
+        let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const clickSoundData = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
+        const bootSoundData = 'data:audio/wav;base64,UklGRlIAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAAABkYXRhLgAAAEB/f3+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/wACAAMEBQYHCAkKCwwNDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicoKSorLC0uLzAxMjM0NTY3ODk6Ozw9Pj9AQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVpbXF1eX2BhYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ent8fX5/gIGCg4SFhoeIiYqLjI2Oj5CRkpOUlZaXmJmam5ydnp+goaKjpKWmp6ipqqusra6vsLKys7S1tre4ubq7vL2+v8DBwsPExcbHyMnKy8zNzs/Q0dLT1NXW19jZ2tvc3d7f4OHi4+Tl5ufo6err7O3u7/Dx8vP09fb3+Pn6+/z9/v8=';
+
+        async function initAudio() {
+            if (audioContext || prefersReducedMotion) return;
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const [clickResponse, bootResponse] = await Promise.all([fetch(clickSoundData), fetch(bootSoundData)]);
+                const [clickArrayBuffer, bootArrayBuffer] = await Promise.all([clickResponse.arrayBuffer(), bootResponse.arrayBuffer()]);
+                [clickBuffer, bootBuffer] = await Promise.all([audioContext.decodeAudioData(clickArrayBuffer), audioContext.decodeAudioData(bootArrayBuffer)]);
+            } catch (e) { console.error("Audio system failed to initialize:", e); }
+        }
+        function playSound(buffer, volume = 1.0, loop = false) {
+            if (isMuted || !audioContext || !buffer || isLowPower) return null;
+            const source = audioContext.createBufferSource(); source.buffer = buffer; source.loop = loop;
+            const gainNode = audioContext.createGain(); gainNode.gain.setValueAtTime(volume, audioContext.currentTime);
+            source.connect(gainNode); gainNode.connect(audioContext.destination);
+            source.start(0);
+            return {source, gainNode};
+        }
+        const initAudioOnFirstInteraction = () => { initAudio(); document.removeEventListener('click', initAudioOnFirstInteraction); document.removeEventListener('mouseover', initAudioOnFirstInteraction); };
+        document.addEventListener('click', initAudioOnFirstInteraction);
+        document.addEventListener('mouseover', initAudioOnFirstInteraction);
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                body.classList.add('loaded'); body.classList.remove('no-scroll');
+                initAudio().then(() => {
+                    playSound(bootBuffer, 0.3);
+                    setTimeout(() => {
+                        if (!isMuted && !isLowPower) {
+                            idleHumNode = playSound(bootBuffer, 0.02, true);
+                        }
+                    }, 1500);
+                });
+            }, 500);
+        });
+
+        const muteBtn = document.getElementById('mute-btn');
+        muteBtn.addEventListener('click', () => {
+            isMuted = !isMuted;
+            document.getElementById('sound-on-icon').style.display = isMuted ? 'none' : 'block';
+            document.getElementById('sound-off-icon').style.display = isMuted ? 'block' : 'none';
+            if (idleHumNode && idleHumNode.gainNode && audioContext) { idleHumNode.gainNode.gain.linearRampToValueAtTime(isMuted ? 0 : 0.02, audioContext.currentTime + 0.5); }
+        });
+
+        const powerBtn = document.getElementById('power-mode-btn');
+        powerBtn.addEventListener('click', () => {
+            isLowPower = !isLowPower; body.classList.toggle('low-power-mode', isLowPower);
+            document.getElementById('power-on-icon').style.display = isLowPower ? 'none' : 'block';
+            document.getElementById('power-off-icon').style.display = isLowPower ? 'block' : 'none';
+            if (idleHumNode && idleHumNode.gainNode && audioContext) { idleHumNode.gainNode.gain.linearRampToValueAtTime((isMuted || isLowPower) ? 0 : 0.02, audioContext.currentTime + 0.5); }
+            if(isLowPower && typeof VanillaTilt !== 'undefined') { VanillaTilt.init(document.querySelectorAll("[data-tilt]")).forEach(tilt => tilt.destroy()); }
+            else if (window.innerWidth > 768 && typeof VanillaTilt !== 'undefined') { VanillaTilt.init(document.querySelectorAll("[data-tilt]"), { max: 8, speed: 400, glare: true, "max-glare": 0.1 }); }
+        });
+
+        if (window.innerWidth > 768 && !prefersReducedMotion) {
+            VanillaTilt.init(document.querySelectorAll("[data-tilt]"), { max: 8, speed: 400, glare: true, "max-glare": 0.1 });
+        }
+
+        const progressBar = document.getElementById('progressBar');
+        window.addEventListener('scroll', () => { const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight; progressBar.style.width = scrollableHeight > 0 ? `${(window.scrollY / scrollableHeight) * 100}%` : '0%'; });
+
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+
+        const navContainer = document.getElementById('side-nav');
+        const navSections = document.querySelectorAll('.section[id]');
+        navSections.forEach((section, index) => {
+            const link = document.createElement('a'); link.href = `#${section.id}`;
+            const h2 = section.querySelector('h2');
+            const tooltipText = h2 ? h2.textContent.split('、')[1] : (section.id === 'preface' ? '序言' : `章节 ${index}`);
+            link.setAttribute('data-tooltip', tooltipText); navContainer.appendChild(link);
+        });
+
+        const navLinks = document.querySelectorAll('.side-nav a');
+        const navObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { const id = entry.target.getAttribute('id'); navLinks.forEach(link => { link.classList.remove('active'); if (link.getAttribute('href') === `#${id}`) link.classList.add('active'); }); } }); }, { rootMargin: '-40% 0px -60% 0px' });
+        navSections.forEach(section => navObserver.observe(section));
+
+        const h2s = document.querySelectorAll('h2');
+        const h2Observer = new IntersectionObserver(entries => { entries.forEach(entry => { entry.target.classList.toggle('illuminated', entry.isIntersecting); }); }, { rootMargin: "-45% 0px -45% 0px" });
+        h2s.forEach(h2 => h2Observer.observe(h2));
+
+        const h1 = document.querySelector('h1');
+        setInterval(() => { if (Math.random() < 0.05 && !isLowPower) { h1.classList.add('glitch-active'); setTimeout(() => h1.classList.remove('glitch-active'), 200); } }, 3000);
+
+        const cursorWrapper = document.querySelector('.cursor-wrapper');
+        if (cursorWrapper && window.innerWidth > 768 && !prefersReducedMotion) {
+            window.addEventListener('mousemove', e => {
+                mouseX = e.clientX; mouseY = e.clientY;
+                cursorWrapper.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+                if (!isLowPower) {
+                    const x = (mouseX / window.innerWidth - 0.5) * 40; const y = (mouseY / window.innerHeight - 0.5) * 40;
+                    body.style.setProperty('--bg-transform-x', `${x}px`);
+                    body.style.setProperty('--bg-transform-y', `${y}px`);
+                } else {
+                    body.style.setProperty('--bg-transform-x', `0px`);
+                    body.style.setProperty('--bg-transform-y', `0px`);
+                }
+            });
+
+            window.addEventListener('mousedown', () => cursorWrapper.classList.add('click'));
+            window.addEventListener('mouseup', () => cursorWrapper.classList.remove('click'));
+
+            document.querySelectorAll('a, button, .card, .tag, .side-nav a').forEach(el => {
+                el.addEventListener('mouseenter', () => { cursorWrapper.classList.add('hover'); playSound(clickBuffer, 0.1); });
+                el.addEventListener('mouseleave', () => cursorWrapper.classList.remove('hover'));
+            });
+            document.querySelectorAll('p, .identity-item, .research-item, .footer, .subtitle, .principle-item, h1, h2, h3, .quote, .formula').forEach(el => {
+                el.addEventListener('mouseenter', () => cursorWrapper.classList.add('text-hover'));
+                el.addEventListener('mouseleave', () => cursorWrapper.classList.remove('text-hover'));
+            });
+        }
+
+        if (typeof particlesJS !== 'undefined' && !prefersReducedMotion) {
+            particlesJS('particles-js', { "particles": { "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 2, "random": true, }, "line_linked": { "enable": true, "distance": 150, "color": "#3b82f6", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false }, "resize": true }, "modes": { "grab": { "distance": 140, "line_opacity": 0.5 } } }, "retina_detect": true });
+
+            let lastMove = Date.now();
+            document.addEventListener('mousemove', () => lastMove = Date.now());
+            const checkInactivity = () => {
+                const pJS = window.pJSDom && window.pJSDom[0] ? window.pJSDom[0].pJS : null;
+                if (!pJS) return;
+                if (Date.now() - lastMove > 3000 && !isLowPower) {
+                    pJS.particles.move.attract.enable = true;
+                    pJS.interactivity.mouse.pos_x = mouseX;
+                    pJS.interactivity.mouse.pos_y = mouseY;
+                } else {
+                    pJS.particles.move.attract.enable = false;
+                }
+            };
+            setInterval(checkInactivity, 250);
+        }
+    });
+</script>
+</body>
+</html>
